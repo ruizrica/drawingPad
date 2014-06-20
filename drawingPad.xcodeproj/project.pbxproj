@@ -30,7 +30,7 @@
 		EBC4970E1953E2F5009AC3D8 /* symbol_m.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC497091953E2F5009AC3D8 /* symbol_m.png */; };
 		EBC4970F1953E2F5009AC3D8 /* symbol_R.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC4970A1953E2F5009AC3D8 /* symbol_R.png */; };
 		EBC497141953E6E3009AC3D8 /* DrawingSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC497131953E6E3009AC3D8 /* DrawingSurface.m */; };
-		EBC497181953ECC4009AC3D8 /* ImagesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC497171953ECC4009AC3D8 /* ImagesCollectionView.m */; };
+		EBC4971D19540609009AC3D8 /* AdvancedDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4971C19540609009AC3D8 /* AdvancedDrawing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +73,8 @@
 		EBC4970A1953E2F5009AC3D8 /* symbol_R.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = symbol_R.png; sourceTree = "<group>"; };
 		EBC497121953E6E3009AC3D8 /* DrawingSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingSurface.h; sourceTree = "<group>"; };
 		EBC497131953E6E3009AC3D8 /* DrawingSurface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingSurface.m; sourceTree = "<group>"; };
-		EBC497161953ECC4009AC3D8 /* ImagesCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesCollectionView.h; sourceTree = "<group>"; };
-		EBC497171953ECC4009AC3D8 /* ImagesCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesCollectionView.m; sourceTree = "<group>"; };
+		EBC4971B19540609009AC3D8 /* AdvancedDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedDrawing.h; sourceTree = "<group>"; };
+		EBC4971C19540609009AC3D8 /* AdvancedDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedDrawing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,6 @@
 		EB7A21CE1953D86D0089C13D /* drawingPad */ = {
 			isa = PBXGroup;
 			children = (
-				EBC497151953EC93009AC3D8 /* ImagesCollectionView */,
 				EBC497111953E6D6009AC3D8 /* DrawingCode */,
 				EBC497051953E2E0009AC3D8 /* ControlImages */,
 				EBC497041953E2D4009AC3D8 /* ImageAssets */,
@@ -211,19 +210,28 @@
 		EBC497111953E6D6009AC3D8 /* DrawingCode */ = {
 			isa = PBXGroup;
 			children = (
-				EBC497121953E6E3009AC3D8 /* DrawingSurface.h */,
-				EBC497131953E6E3009AC3D8 /* DrawingSurface.m */,
+				EBC4971A195405BA009AC3D8 /* Advanced */,
+				EBC49719195405B0009AC3D8 /* Rommel */,
 			);
 			name = DrawingCode;
 			sourceTree = "<group>";
 		};
-		EBC497151953EC93009AC3D8 /* ImagesCollectionView */ = {
+		EBC49719195405B0009AC3D8 /* Rommel */ = {
 			isa = PBXGroup;
 			children = (
-				EBC497161953ECC4009AC3D8 /* ImagesCollectionView.h */,
-				EBC497171953ECC4009AC3D8 /* ImagesCollectionView.m */,
+				EBC497121953E6E3009AC3D8 /* DrawingSurface.h */,
+				EBC497131953E6E3009AC3D8 /* DrawingSurface.m */,
 			);
-			name = ImagesCollectionView;
+			name = Rommel;
+			sourceTree = "<group>";
+		};
+		EBC4971A195405BA009AC3D8 /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				EBC4971B19540609009AC3D8 /* AdvancedDrawing.h */,
+				EBC4971C19540609009AC3D8 /* AdvancedDrawing.m */,
+			);
+			name = Advanced;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,9 +342,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC4971D19540609009AC3D8 /* AdvancedDrawing.m in Sources */,
 				EBC497141953E6E3009AC3D8 /* DrawingSurface.m in Sources */,
 				EB7A21DF1953D86D0089C13D /* ViewController.m in Sources */,
-				EBC497181953ECC4009AC3D8 /* ImagesCollectionView.m in Sources */,
 				EB7A21D91953D86D0089C13D /* AppDelegate.m in Sources */,
 				EB7A21D51953D86D0089C13D /* main.m in Sources */,
 			);

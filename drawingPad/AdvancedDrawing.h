@@ -1,5 +1,5 @@
 //
-//  ImagesCollectionView.h
+//  AdvancedDrawing.h
 //  drawingPad
 //
 //  Created by Ricardo Ruiz on 6/19/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImagesCollectionView : UICollectionViewController
-
+@interface AdvancedDrawing : UIView
+- (void)clearSurface;
 @end

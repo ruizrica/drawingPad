@@ -13,7 +13,6 @@
     NSArray *controlImages;
     NSMutableArray *userDrawnImages;
     UIImage *userDrawnImage;
-    
     int counter;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
@@ -24,6 +23,7 @@
 - (IBAction)clear:(id)sender;
 - (IBAction)next:(id)sender;
 
+- (void)counterCheck;
 - (void)saveImage;
 @end
 
@@ -34,6 +34,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"userInputBackground.png"]];
     
     controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
@@ -42,15 +43,25 @@
 }
 
 - (IBAction)clear:(id)sender {
+    
     [(DrawingSurface *)drawingView clearSurface];
 }
 
 - (IBAction)next:(id)sender {
+    
     controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
-    [self saveImage];
+    //[self saveImage];
+    counter++;
+    [self counterCheck];
     [(DrawingSurface *)drawingView clearSurface];
-    //counter++;
-    //[userDrawnImages objectAtIndex:counter];
+}
+
+- (void)counterCheck {
+    //NSLog(@"Counter Value: %i", counter);
+    
+    if (counter >= 2) {
+        [self saveImage];
+    }
 }
 
 - (void)saveImage {
@@ -60,7 +71,7 @@
     [userDrawnImages addObject:userDrawnImages];
     UIGraphicsEndImageContext();
     
-    NSLog(@"Images Saved:%i",userDrawnImages.count);
+    NSLog(@"Images Saved:%lu",(unsigned long)userDrawnImages.count);
 }
 
 @end

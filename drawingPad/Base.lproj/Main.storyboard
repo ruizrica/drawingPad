@@ -28,8 +28,8 @@
                                 <rect key="frame" x="34" y="533" width="700" height="462"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEX-qk-m43" customClass="DrawingSurface">
-                                <rect key="frame" x="43" y="543" width="675" height="407"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEX-qk-m43" customClass="AdvancedDrawing">
+                                <rect key="frame" x="46" y="542" width="675" height="407"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
