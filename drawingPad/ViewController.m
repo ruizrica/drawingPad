@@ -12,7 +12,6 @@
 @interface ViewController () {
     NSArray *controlImages;
     NSMutableArray *userDrawnImages;
-
     UIImage *userDrawnImage;
     int counter;
 }
@@ -24,7 +23,6 @@
 
 - (IBAction)clear:(id)sender;
 - (IBAction)next:(id)sender;
-
 - (void)counterCheck;
 - (void)saveImage;
 @end
@@ -35,8 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"userInputBackground.png"]];
+    //
+    //drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"userInputBackground.png"]];
     controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
     userDrawnImages = [[NSMutableArray alloc]init];
 }
