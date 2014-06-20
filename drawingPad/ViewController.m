@@ -7,23 +7,59 @@
 //
 
 #import "ViewController.h"
+#import "DrawingSurface.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    NSArray *controlImages;
+    NSMutableArray *userDrawnImages;
+    UIImage *userDrawnImage;
+    
+    int counter;
+}
+@property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
+@property (strong, nonatomic) IBOutlet UIImageView *controlImage;
+@property (strong, nonatomic) IBOutlet UIImageView *userInputBackground;
+@property (strong, nonatomic) IBOutlet UIView *drawingView;
 
+- (IBAction)clear:(id)sender;
+- (IBAction)next:(id)sender;
+
+- (void)saveImage;
 @end
 
 @implementation ViewController
+@synthesize controlImage, controlImageBackground, userInputBackground, drawingView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"userInputBackground.png"]];
+    
+    controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
+    
+    userDrawnImages = [[NSMutableArray alloc]init];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)clear:(id)sender {
+    [(DrawingSurface *)drawingView clearSurface];
+}
+
+- (IBAction)next:(id)sender {
+    controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
+    [self saveImage];
+    //counter++;
+    //[userDrawnImages objectAtIndex:counter];
+}
+
+- (void)saveImage {
+    UIGraphicsBeginImageContext(drawingView.bounds.size);
+    [drawingView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    userDrawnImage = UIGraphicsGetImageFromCurrentImageContext();
+    [userDrawnImages addObject:userDrawnImages];
+    UIGraphicsEndImageContext();
+    
+    NSLog(@"Images Saved:%i",userDrawnImages.count);
 }
 
 @end
