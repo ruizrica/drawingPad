@@ -12,6 +12,7 @@
 @interface ViewController () {
     NSArray *controlImages;
     NSMutableArray *userDrawnImages;
+
     UIImage *userDrawnImage;
     int counter;
 }
@@ -43,6 +44,7 @@
 - (IBAction)clear:(id)sender {
     
     [self clearImage];
+    preview.image = nil;
 }
 
 - (IBAction)next:(id)sender {

@@ -22,7 +22,7 @@
         [self setMultipleTouchEnabled:NO];
         [self setBackgroundColor:[UIColor whiteColor]];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:10.0];
+        [path setLineWidth:5.0];
     }
     return self;
     
@@ -33,7 +33,7 @@
     if (self) {
         [self setMultipleTouchEnabled:NO];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:10.0];
+        [path setLineWidth:5.0];
     }
     return self;
 }
