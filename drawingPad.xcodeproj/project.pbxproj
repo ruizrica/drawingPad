@@ -134,11 +134,11 @@
 		EB7A21CE1953D86D0089C13D /* drawingPad */ = {
 			isa = PBXGroup;
 			children = (
+				EB7A21DA1953D86D0089C13D /* Main.storyboard */,
+				EBC497101953E6D0009AC3D8 /* Delegate */,
 				EBC497111953E6D6009AC3D8 /* DrawingCode */,
 				EBC497051953E2E0009AC3D8 /* ControlImages */,
 				EBC497041953E2D4009AC3D8 /* ImageAssets */,
-				EBC497101953E6D0009AC3D8 /* Delegate */,
-				EB7A21DA1953D86D0089C13D /* Main.storyboard */,
 				EB7A21DD1953D86D0089C13D /* ViewController.h */,
 				EB7A21DE1953D86D0089C13D /* ViewController.m */,
 				EB7A21E01953D86D0089C13D /* Images.xcassets */,

@@ -49,14 +49,8 @@
     
     controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
     counter++;
-    [self counterCheck];
+    [self counterCheck]; // Saves Image
     [self clearImage];
-    /*if (userDrawnImages == nil) {
-        NSLog(@"UserDrawnImages Array is nil");
-    } else {
-      preview.image = [UIImage imageNamed:[userDrawnImages lastObject]];
-    }*/
-    
 }
 
 - (void)counterCheck {
@@ -73,10 +67,11 @@
     UIGraphicsBeginImageContext(drawingView.bounds.size);
     [drawingView.layer renderInContext:UIGraphicsGetCurrentContext()];
     userDrawnImage = UIGraphicsGetImageFromCurrentImageContext();
-    [userDrawnImages addObject:userDrawnImages];
+    [userDrawnImages addObject:userDrawnImage];
     UIGraphicsEndImageContext();
     
     NSLog(@"Images Saved:%lu",(unsigned long)userDrawnImages.count);
+    preview.image = userDrawnImage;
 }
 
 - (void)clearImage {
