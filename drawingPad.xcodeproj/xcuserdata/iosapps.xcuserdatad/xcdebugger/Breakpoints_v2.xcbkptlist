@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "drawingPad/ViewController.m"
-            timestampString = "424935017.388554"
+            timestampString = "424940335.388841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "-saveImage"
             landmarkType = "5">
          </BreakpointContent>

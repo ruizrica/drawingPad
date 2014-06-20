@@ -55,6 +55,10 @@
                                     <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uat-W4-v6Y"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Qe-sd-11j">
+                                <rect key="frame" x="522" y="360" width="192" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -62,6 +66,7 @@
                         <outlet property="controlImage" destination="6Bw-Hp-0Vn" id="jeT-9x-MFI"/>
                         <outlet property="controlImageBackground" destination="CPC-dM-eVB" id="Zng-TQ-ibQ"/>
                         <outlet property="drawingView" destination="EEX-qk-m43" id="3kx-L3-srV"/>
+                        <outlet property="preview" destination="3Qe-sd-11j" id="dW0-te-Ykb"/>
                         <outlet property="userInputBackground" destination="7bx-a1-FVE" id="D9H-Vn-bWK"/>
                     </connections>
                 </viewController>

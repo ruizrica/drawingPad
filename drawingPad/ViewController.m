@@ -15,6 +15,7 @@
     UIImage *userDrawnImage;
     int counter;
 }
+@property (strong, nonatomic) IBOutlet UIImageView *preview;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImage;
 @property (strong, nonatomic) IBOutlet UIImageView *userInputBackground;
@@ -28,7 +29,7 @@
 @end
 
 @implementation ViewController
-@synthesize controlImage, controlImageBackground, userInputBackground, drawingView;
+@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview;
 
 - (void)viewDidLoad
 {
@@ -54,6 +55,13 @@
     counter++;
     [self counterCheck];
     [(DrawingSurface *)drawingView clearSurface];
+    
+    if (userDrawnImages == nil) {
+        NSLog(@"UserDrawnImages Array is nil");
+    } else {
+      preview.image = [UIImage imageNamed:[userDrawnImages lastObject]];
+    }
+    
 }
 
 - (void)counterCheck {
