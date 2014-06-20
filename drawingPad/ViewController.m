@@ -48,6 +48,7 @@
 - (IBAction)next:(id)sender {
     controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
     [self saveImage];
+    [(DrawingSurface *)drawingView clearSurface];
     //counter++;
     //[userDrawnImages objectAtIndex:counter];
 }
