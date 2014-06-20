@@ -22,7 +22,7 @@
         [self setMultipleTouchEnabled:NO];
         [self setBackgroundColor:[UIColor whiteColor]];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:15.0];
+        [path setLineWidth:10.0];
     }
     return self;
     
@@ -33,7 +33,7 @@
     if (self) {
         [self setMultipleTouchEnabled:NO];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:15.0];
+        [path setLineWidth:10.0];
     }
     return self;
 }
@@ -46,7 +46,6 @@
     [incrementalImage drawInRect:rect];
     [path stroke];
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -94,12 +93,16 @@
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
     
-    if (!incrementalImage) // first time; paint background white
+    UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+    [[UIColor whiteColor] setFill];
+    [rectpath fill];
+    
+    /*if (!incrementalImage) // first time; paint background white
     {
         UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
         [[UIColor whiteColor] setFill];
         [rectpath fill];
-    }
+    }*/
     [incrementalImage drawAtPoint:CGPointZero];
     [[UIColor blackColor] setStroke];
     [path stroke];
@@ -107,19 +110,8 @@
     UIGraphicsEndImageContext();
 }
 - (void)clearSurface {
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
-    
-    if (!incrementalImage) // first time; paint background white
-    {
-        UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-        [[UIColor whiteColor] setFill];
-        [rectpath fill];
-    }
-    [incrementalImage drawAtPoint:CGPointZero];
-    [[UIColor blackColor] setStroke];
-    [path stroke];
-    incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    incrementalImage = nil;
+    [path removeAllPoints];
     [self setNeedsDisplay];
 }
 

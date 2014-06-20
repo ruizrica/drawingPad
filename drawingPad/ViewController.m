@@ -34,45 +34,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"userInputBackground.png"]];
-    
     controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
-    
     userDrawnImages = [[NSMutableArray alloc]init];
 }
 
 - (IBAction)clear:(id)sender {
     
-    [(DrawingSurface *)drawingView clearSurface];
+    [self clearImage];
 }
 
 - (IBAction)next:(id)sender {
     
     controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
-    //[self saveImage];
     counter++;
     [self counterCheck];
-    [(DrawingSurface *)drawingView clearSurface];
-    
-    if (userDrawnImages == nil) {
+    [self clearImage];
+    /*if (userDrawnImages == nil) {
         NSLog(@"UserDrawnImages Array is nil");
     } else {
       preview.image = [UIImage imageNamed:[userDrawnImages lastObject]];
-    }
+    }*/
     
 }
 
 - (void)counterCheck {
-    //NSLog(@"Counter Value: %i", counter);
-    
+
     if (counter >= 2) {
         [self saveImage];
+    } else {
+        NSLog(@"Counter Value: %i", counter);
     }
 }
 
 - (void)saveImage {
+    
     UIGraphicsBeginImageContext(drawingView.bounds.size);
     [drawingView.layer renderInContext:UIGraphicsGetCurrentContext()];
     userDrawnImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -80,6 +77,11 @@
     UIGraphicsEndImageContext();
     
     NSLog(@"Images Saved:%lu",(unsigned long)userDrawnImages.count);
+}
+
+- (void)clearImage {
+    
+    [(DrawingSurface *)drawingView clearSurface];
 }
 
 @end
