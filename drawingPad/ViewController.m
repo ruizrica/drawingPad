@@ -46,30 +46,23 @@
     [super viewDidLoad];
     speedLabel.text = [NSString stringWithFormat:@"%d",speed] ;
     modelObject = [[LessonModel alloc]init];
-    
     controlImages = [modelObject getLessonWithID:1];
     userDrawnImages = [[NSMutableArray alloc]init];
-    
+
     options = [[UIBarButtonItem alloc]
                                 initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(popMenu)];
     self.navigationItem.rightBarButtonItem = options;
     
     //set in counter to 0
-    
     counter = 0;
-
 }
 
 - (IBAction)clear:(id)sender {
-    
-    
 
     [self clearImage];
 }
 
 - (IBAction)next:(UIButton *)sender {
-    
-    
     
     if ([sender.currentTitle  isEqual: @"Start"]) {
         
@@ -77,48 +70,32 @@
         [sender setTitle:@"Next" forState:UIControlStateNormal];
         
         //Flash the first image
-        
         controlImage.image = [UIImage imageNamed:controlImages[0]];
         
         //start the countdown
-        
         durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
        
-        
         //accumulate counter
-        
         counter++;
-        
         }
     
     else if ([sender.currentTitle isEqual:@"Next"]){
-             controlImage.image = [UIImage imageNamed:controlImages[counter]];
- 
+        
+        controlImage.image = [UIImage imageNamed:controlImages[counter]];
         
         //start the countdown
-        
         durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
         
-        
         //accumulate counter
-        
         counter++;
     
         if (counter>=11){
             [self  goToReview];
         }
-        
         NSLog(@"Counter %d",counter);
-        
         [self saveImage];
         [self clearImage];
     }
-    
-    
-  
-    
-   // [self counterCheck]; // Saves Image
-    //[self clearImage];
 }
 
 - (void)popMenu {
@@ -128,7 +105,7 @@
     [optionsMenu showFromBarButtonItem:options animated:YES];
 }
 
-// Delegate Methods
+// ActionSheet Delegate: Selected Button Index
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     switch (buttonIndex) {
@@ -141,6 +118,12 @@
     }
 }
 
+// ActionSheet Delegate: Cancelled
+- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
+    NSLog(@"User Cancelled Selection");
+}
+
+// Push to ReviewView
 - (void)goToReview {
     
     modelObject.userInput = userDrawnImages;
@@ -150,9 +133,6 @@
     [self.navigationController pushViewController:review animated:YES];
 }
 
-- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
-    NSLog(@"User Cancelled Selection");
-}
 // Save Image
 - (void)saveImage {
     
@@ -165,6 +145,7 @@
     NSLog(@"Images Saved:%lu",(unsigned long)userDrawnImages.count);
     preview.image = userDrawnImage;
 }
+
 // Clear Image
 - (void)clearImage {
     
@@ -172,6 +153,7 @@
      preview.image = nil;
 }
 
+// Clear Control Image
 -(void)clearControlImage{
     controlImage.image = nil;
     NSLog(@"Cleared!");
