@@ -16,7 +16,7 @@
     UIImage *userDrawnImage;
     UIBarButtonItem *options;
     int counter;
-    NSTimer* duration;
+    NSTimer* durationTimer;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *speedLabel;
@@ -53,6 +53,11 @@
     options = [[UIBarButtonItem alloc]
                                 initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(popMenu)];
     self.navigationItem.rightBarButtonItem = options;
+    
+    //set in counter to 0
+    
+    counter = 0;
+
 }
 
 - (IBAction)clear:(id)sender {
@@ -68,12 +73,44 @@
     
     if ([sender.currentTitle  isEqual: @"Start"]) {
         
+        //Change the button title from Start to Next
+        [sender setTitle:@"Next" forState:UIControlStateNormal];
+        
         //Flash the first image
         
-        [sender setTitle:@"Next" forState:UIControlStateNormal];
+        controlImage.image = [UIImage imageNamed:controlImages[0]];
+        
+        //start the countdown
+        
+        
+        durationTimer = [NSTimer tim
+        //durationTimer = [NSTimer timerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil repeats:NO];
+        [durationTimer fire];
+        
+        //accumulate counter
+        
+        //counter++;
+        
+        }
+    
+    else if ([sender.currentTitle isEqual:@"Next"]){
+             controlImage.image = [UIImage imageNamed:controlImages[counter]];
+ 
+        
+        //Start Countdown to clear image;
+       // durationTimer = [NSTimer timerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil repeats:NO];
+        //[durationTimer fire];
+        
+        //accumulate counter
+        
+        counter++;
+    
+        
     }
     
-    controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
+    
+    
+   // controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
     counter++;
     
     [self counterCheck]; // Saves Image
@@ -143,4 +180,8 @@
      preview.image = nil;
 }
 
+-(void)clearControlImage{
+    controlImage.image = nil;
+    NSLog(@"Cleared!");
+}
 @end
