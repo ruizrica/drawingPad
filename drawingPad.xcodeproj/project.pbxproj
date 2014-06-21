@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EA38E661956174100E5E591 /* SpeedSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA38E651956174100E5E591 /* SpeedSelectionViewController.m */; };
 		EB4084B61954FF5B0070A5D7 /* LessonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4084B51954FF5B0070A5D7 /* LessonModel.m */; };
 		EB7A21C91953D86D0089C13D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A21C81953D86D0089C13D /* Foundation.framework */; };
 		EB7A21CB1953D86D0089C13D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A21CA1953D86D0089C13D /* CoreGraphics.framework */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EA38E641956174100E5E591 /* SpeedSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedSelectionViewController.h; sourceTree = "<group>"; };
+		5EA38E651956174100E5E591 /* SpeedSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedSelectionViewController.m; sourceTree = "<group>"; };
 		EB4084B41954FF5B0070A5D7 /* LessonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonModel.h; sourceTree = "<group>"; };
 		EB4084B51954FF5B0070A5D7 /* LessonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonModel.m; sourceTree = "<group>"; };
 		EB7A21C51953D86D0089C13D /* drawingPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawingPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				EB7A21DA1953D86D0089C13D /* Main.storyboard */,
+				5EA38E641956174100E5E591 /* SpeedSelectionViewController.h */,
+				5EA38E651956174100E5E591 /* SpeedSelectionViewController.m */,
 				EBC497101953E6D0009AC3D8 /* Delegate */,
 				EBC497111953E6D6009AC3D8 /* DrawingCode */,
 				EBC497051953E2E0009AC3D8 /* ControlImages */,
@@ -383,6 +388,7 @@
 				EB7A21D91953D86D0089C13D /* AppDelegate.m in Sources */,
 				EB7A21D51953D86D0089C13D /* main.m in Sources */,
 				EB99D0981955621D00AEDAF6 /* ReviewView.m in Sources */,
+				5EA38E661956174100E5E591 /* SpeedSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

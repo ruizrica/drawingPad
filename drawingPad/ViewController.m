@@ -17,6 +17,10 @@
     UIBarButtonItem *options;
     int counter;
 }
+
+@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
+
+//<-- temporary
 @property (strong, nonatomic) IBOutlet UIImageView *preview;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImage;
@@ -34,12 +38,12 @@
 @end
 
 @implementation ViewController
-@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next, modelObject;
+@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next, modelObject,speedLabel,speed;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    speedLabel.text = [NSString stringWithFormat:@"%d",speed] ;
     modelObject = [[LessonModel alloc]init];
     
     controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
