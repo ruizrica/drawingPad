@@ -16,6 +16,7 @@
     UIImage *userDrawnImage;
     UIBarButtonItem *options;
     int counter;
+    NSTimer* duration;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *speedLabel;
@@ -56,12 +57,19 @@
 
 - (IBAction)clear:(id)sender {
     
+    
+
     [self clearImage];
 }
 
 - (IBAction)next:(UIButton *)sender {
     
+    
+    
     if ([sender.currentTitle  isEqual: @"Start"]) {
+        
+        //Flash the first image
+        
         [sender setTitle:@"Next" forState:UIControlStateNormal];
     }
     

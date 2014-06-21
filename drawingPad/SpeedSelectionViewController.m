@@ -56,10 +56,11 @@
     ViewController *mainScreen =[self.storyboard instantiateViewControllerWithIdentifier:@"MainScreen"];
     
     mainScreen.speed = FLASHING_SPEED * sender.tag;
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainScreen];
     
-    mainScreen.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    [self presentViewController:mainScreen animated:YES completion:nil];
+    [self presentViewController:nav animated:YES completion:nil];
     
     
 }
