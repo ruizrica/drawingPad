@@ -47,7 +47,7 @@
     speedLabel.text = [NSString stringWithFormat:@"%d",speed] ;
     modelObject = [[LessonModel alloc]init];
     
-    controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
+    controlImages = [modelObject getLessonWithID:1];
     userDrawnImages = [[NSMutableArray alloc]init];
     
     options = [[UIBarButtonItem alloc]
