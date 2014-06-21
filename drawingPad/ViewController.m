@@ -104,7 +104,7 @@
         
         counter++;
     
-        if (counter>=10){
+        if (counter>=11){
             [self  goToReview];
         }
         
