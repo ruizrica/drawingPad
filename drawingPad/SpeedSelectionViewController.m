@@ -14,7 +14,7 @@
 
 @end
 
-#define FLASHING_SPEED 1
+static int const FLASHING_SPEED = 1;
 
 @implementation SpeedSelectionViewController
 
