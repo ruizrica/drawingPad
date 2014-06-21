@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LessonModel.h"
 
 @interface ViewController : UIViewController
-
+@property (nonatomic,strong) LessonModel *modelObject;
 @end

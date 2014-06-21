@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB4084B61954FF5B0070A5D7 /* LessonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4084B51954FF5B0070A5D7 /* LessonModel.m */; };
 		EB7A21C91953D86D0089C13D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A21C81953D86D0089C13D /* Foundation.framework */; };
 		EB7A21CB1953D86D0089C13D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A21CA1953D86D0089C13D /* CoreGraphics.framework */; };
 		EB7A21CD1953D86D0089C13D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A21CC1953D86D0089C13D /* UIKit.framework */; };
@@ -23,6 +24,7 @@
 		EB7A21F41953D86D0089C13D /* drawingPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7A21F31953D86D0089C13D /* drawingPadTests.m */; };
 		EB7A21FE1953D8FF0089C13D /* drawBoundry.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7A21FD1953D8FF0089C13D /* drawBoundry.png */; };
 		EB7A22001953D9A70089C13D /* drawBoundry_user.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7A21FF1953D9A70089C13D /* drawBoundry_user.png */; };
+		EB99D0981955621D00AEDAF6 /* ReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB99D0971955621D00AEDAF6 /* ReviewView.m */; };
 		EBC497031953E16D009AC3D8 /* userInputBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC497021953E16D009AC3D8 /* userInputBackground.png */; };
 		EBC4970B1953E2F5009AC3D8 /* symbol_A.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC497061953E2F5009AC3D8 /* symbol_A.png */; };
 		EBC4970C1953E2F5009AC3D8 /* symbol_B.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC497071953E2F5009AC3D8 /* symbol_B.png */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB4084B41954FF5B0070A5D7 /* LessonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonModel.h; sourceTree = "<group>"; };
+		EB4084B51954FF5B0070A5D7 /* LessonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonModel.m; sourceTree = "<group>"; };
 		EB7A21C51953D86D0089C13D /* drawingPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawingPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7A21C81953D86D0089C13D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB7A21CA1953D86D0089C13D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +69,8 @@
 		EB7A21F31953D86D0089C13D /* drawingPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawingPadTests.m; sourceTree = "<group>"; };
 		EB7A21FD1953D8FF0089C13D /* drawBoundry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawBoundry.png; sourceTree = "<group>"; };
 		EB7A21FF1953D9A70089C13D /* drawBoundry_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawBoundry_user.png; sourceTree = "<group>"; };
+		EB99D0961955621D00AEDAF6 /* ReviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewView.h; sourceTree = "<group>"; };
+		EB99D0971955621D00AEDAF6 /* ReviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewView.m; sourceTree = "<group>"; };
 		EBC497021953E16D009AC3D8 /* userInputBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userInputBackground.png; sourceTree = "<group>"; };
 		EBC497061953E2F5009AC3D8 /* symbol_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = symbol_A.png; sourceTree = "<group>"; };
 		EBC497071953E2F5009AC3D8 /* symbol_B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = symbol_B.png; sourceTree = "<group>"; };
@@ -101,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB4084B31954FF360070A5D7 /* LessonModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB4084B41954FF5B0070A5D7 /* LessonModel.h */,
+				EB4084B51954FF5B0070A5D7 /* LessonModel.m */,
+			);
+			name = LessonModel;
+			sourceTree = "<group>";
+		};
 		EB7A21BC1953D86D0089C13D = {
 			isa = PBXGroup;
 			children = (
@@ -138,9 +153,10 @@
 				EBC497101953E6D0009AC3D8 /* Delegate */,
 				EBC497111953E6D6009AC3D8 /* DrawingCode */,
 				EBC497051953E2E0009AC3D8 /* ControlImages */,
+				EB4084B31954FF360070A5D7 /* LessonModel */,
 				EBC497041953E2D4009AC3D8 /* ImageAssets */,
-				EB7A21DD1953D86D0089C13D /* ViewController.h */,
-				EB7A21DE1953D86D0089C13D /* ViewController.m */,
+				EB99D095195561F200AEDAF6 /* ReviewView */,
+				EB99D0991955622C00AEDAF6 /* MainView */,
 				EB7A21E01953D86D0089C13D /* Images.xcassets */,
 				EB7A21CF1953D86D0089C13D /* Supporting Files */,
 			);
@@ -174,6 +190,24 @@
 				EB7A21F01953D86D0089C13D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB99D095195561F200AEDAF6 /* ReviewView */ = {
+			isa = PBXGroup;
+			children = (
+				EB99D0961955621D00AEDAF6 /* ReviewView.h */,
+				EB99D0971955621D00AEDAF6 /* ReviewView.m */,
+			);
+			name = ReviewView;
+			sourceTree = "<group>";
+		};
+		EB99D0991955622C00AEDAF6 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				EB7A21DD1953D86D0089C13D /* ViewController.h */,
+				EB7A21DE1953D86D0089C13D /* ViewController.m */,
+			);
+			name = MainView;
 			sourceTree = "<group>";
 		};
 		EBC497041953E2D4009AC3D8 /* ImageAssets */ = {
@@ -345,8 +379,10 @@
 				EBC4971D19540609009AC3D8 /* AdvancedDrawing.m in Sources */,
 				EBC497141953E6E3009AC3D8 /* DrawingSurface.m in Sources */,
 				EB7A21DF1953D86D0089C13D /* ViewController.m in Sources */,
+				EB4084B61954FF5B0070A5D7 /* LessonModel.m in Sources */,
 				EB7A21D91953D86D0089C13D /* AppDelegate.m in Sources */,
 				EB7A21D51953D86D0089C13D /* main.m in Sources */,
+				EB99D0981955621D00AEDAF6 /* ReviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
