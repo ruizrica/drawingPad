@@ -49,10 +49,6 @@
     controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
     userDrawnImages = [[NSMutableArray alloc]init];
     
-    start_next = [[UIButton alloc]init];
-    [start_next setTitle:@"Start" forState:UIControlStateNormal];
-    [start_next setTitle:@"Next" forState:UIControlStateSelected];
-    
     options = [[UIBarButtonItem alloc]
                                 initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(popMenu)];
     self.navigationItem.rightBarButtonItem = options;
