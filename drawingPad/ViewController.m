@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "DrawingSurface.h"
+#import "ReviewView.h"
 
 @interface ViewController ()<UIActionSheetDelegate> {
     NSArray *controlImages;
@@ -15,29 +16,31 @@
     UIImage *userDrawnImage;
     UIBarButtonItem *options;
     int counter;
+    int buttonCounter;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *preview;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImage;
 @property (strong, nonatomic) IBOutlet UIImageView *userInputBackground;
 @property (strong, nonatomic) IBOutlet UIView *drawingView;
+@property (strong, nonatomic) IBOutlet UIButton *start_next;
 
 - (IBAction)clear:(id)sender;
 - (IBAction)next:(id)sender;
 
 - (void)counterCheck;
+- (void)buttonCounterCheck;
 - (void)saveImage;
 - (void)popMenu;
 @end
 
 @implementation ViewController
-@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview;
+@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //
-    //drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"userInputBackground.png"]];
+    buttonCounter = 0;
     controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
     userDrawnImages = [[NSMutableArray alloc]init];
     
@@ -46,19 +49,27 @@
     self.navigationItem.rightBarButtonItem = options;
 }
 
-
 - (IBAction)clear:(id)sender {
     
     [self clearImage];
-    preview.image = nil;
+   
 }
 
 - (IBAction)next:(id)sender {
     
     controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
     counter++;
+    buttonCounter++;
+    [self buttonCounterCheck];
+    
     [self counterCheck]; // Saves Image
     [self clearImage];
+}
+
+- (void)buttonCounterCheck {
+    if (buttonCounter >= 2) {
+        start_next.titleLabel.text = @"Next";
+    }
 }
 
 - (void)popMenu {
@@ -71,10 +82,21 @@
 // Delegate Methods
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
+    switch (buttonIndex) {
+        case 0: [self clearImage]; // Reset Lesson
+            break;
+        case 1: {
+            ReviewView *review =[self.storyboard instantiateViewControllerWithIdentifier:@"ReviewView"];
+            [self.navigationController pushViewController:review animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet {
-    
+    NSLog(@"User Cancelled Selection");
 }
 //
 - (void)counterCheck {
@@ -104,6 +126,7 @@
 - (void)clearImage {
     
     [(DrawingSurface *)drawingView clearSurface];
+     preview.image = nil;
 }
 
 @end

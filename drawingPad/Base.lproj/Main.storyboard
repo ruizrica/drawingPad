@@ -68,6 +68,7 @@
                         <outlet property="controlImageBackground" destination="CPC-dM-eVB" id="Zng-TQ-ibQ"/>
                         <outlet property="drawingView" destination="EEX-qk-m43" id="3kx-L3-srV"/>
                         <outlet property="preview" destination="3Qe-sd-11j" id="dW0-te-Ykb"/>
+                        <outlet property="start_next" destination="Rbo-iu-7Ww" id="x8S-Jh-ll1"/>
                         <outlet property="userInputBackground" destination="7bx-a1-FVE" id="D9H-Vn-bWK"/>
                     </connections>
                 </viewController>
