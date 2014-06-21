@@ -82,14 +82,12 @@
         
         //start the countdown
         
-        
-        durationTimer = [NSTimer tim
-        //durationTimer = [NSTimer timerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil repeats:NO];
-        [durationTimer fire];
+        durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
+       
         
         //accumulate counter
         
-        //counter++;
+        counter++;
         
         }
     
@@ -97,9 +95,10 @@
              controlImage.image = [UIImage imageNamed:controlImages[counter]];
  
         
-        //Start Countdown to clear image;
-       // durationTimer = [NSTimer timerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil repeats:NO];
-        //[durationTimer fire];
+        //start the countdown
+        
+        durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
+        
         
         //accumulate counter
         
