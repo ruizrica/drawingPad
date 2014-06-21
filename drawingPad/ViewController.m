@@ -29,7 +29,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *start_next;
 
 - (IBAction)clear:(id)sender;
-- (IBAction)next:(id)sender;
+- (IBAction)next:(UIButton *)sender;
 
 - (void)counterCheck;
 - (void)saveImage;
@@ -63,7 +63,12 @@
     [self clearImage];
 }
 
-- (IBAction)next:(id)sender {
+- (IBAction)next:(UIButton *)sender {
+    
+    if ([sender.currentTitle  isEqual: @"Start"]) {
+        [sender setTitle:@"Next" forState:UIControlStateNormal];
+    }
+    
     controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
     counter++;
     
