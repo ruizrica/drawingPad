@@ -13,12 +13,12 @@
 @end
 
 @implementation ReviewView
-@synthesize collectionArray, userObjects, model;
+@synthesize model;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    userObjects = model.userInput;
+    //userObjects = model.userInput;
     self.collectionView.backgroundColor = [UIColor redColor];
 }
 
@@ -30,7 +30,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return userObjects.count;
+    return model.userInput.count;
 }
 
 
@@ -40,7 +40,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UIImageView *controlImage = (UIImageView *)[cell viewWithTag:100];
-    controlImage.image = [userObjects objectAtIndex:indexPath.row];
+    controlImage.image = [model.userInput objectAtIndex:indexPath.row];
     //UIImageView *userImage = (UIImageView *)[cell viewWithTag:200];
     //userImage.image = [UIImage imageNamed:[userObjects objectAtIndex:indexPath.row]];
     
