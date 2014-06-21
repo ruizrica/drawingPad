@@ -10,4 +10,7 @@
 
 @interface ReviewView : UICollectionViewController
 
+@property (nonatomic,strong) NSMutableArray *userObjects;
+@property (nonatomic,strong) NSArray *collectionArray;
+
 @end

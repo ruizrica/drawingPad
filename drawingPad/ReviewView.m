@@ -13,15 +13,7 @@
 @end
 
 @implementation ReviewView
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize collectionArray, userObjects;
 
 - (void)viewDidLoad
 {
@@ -33,6 +25,7 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    NSLog(@"System Generated Memory Warning");
 }
 
 /*

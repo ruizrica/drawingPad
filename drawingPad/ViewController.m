@@ -9,10 +9,11 @@
 #import "ViewController.h"
 #import "DrawingSurface.h"
 
-@interface ViewController () {
+@interface ViewController ()<UIActionSheetDelegate> {
     NSArray *controlImages;
     NSMutableArray *userDrawnImages;
     UIImage *userDrawnImage;
+    UIBarButtonItem *options;
     int counter;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *preview;
@@ -23,8 +24,10 @@
 
 - (IBAction)clear:(id)sender;
 - (IBAction)next:(id)sender;
+
 - (void)counterCheck;
 - (void)saveImage;
+- (void)popMenu;
 @end
 
 @implementation ViewController
@@ -37,7 +40,12 @@
     //drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"userInputBackground.png"]];
     controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
     userDrawnImages = [[NSMutableArray alloc]init];
+    
+    options = [[UIBarButtonItem alloc]
+                                initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(popMenu)];
+    self.navigationItem.rightBarButtonItem = options;
 }
+
 
 - (IBAction)clear:(id)sender {
     
@@ -53,6 +61,22 @@
     [self clearImage];
 }
 
+- (void)popMenu {
+    
+    UIActionSheet *optionsMenu = [[UIActionSheet alloc]initWithTitle:@"Options" delegate:self cancelButtonTitle:@"Dismiss" destructiveButtonTitle:@"Clear Screen" otherButtonTitles:@"ResultsView", nil];
+    
+    [optionsMenu showFromBarButtonItem:options animated:YES];
+}
+
+// Delegate Methods
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+}
+
+- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
+    
+}
+//
 - (void)counterCheck {
 
     if (counter >= 2) {
@@ -62,6 +86,9 @@
     }
 }
 
+
+// Save & Clear Image
+//
 - (void)saveImage {
     
     UIGraphicsBeginImageContext(drawingView.bounds.size);
