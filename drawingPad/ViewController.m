@@ -153,19 +153,7 @@
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet {
     NSLog(@"User Cancelled Selection");
 }
-//
-- (void)counterCheck {
-
-    if (counter >= 2) {
-        [self saveImage];
-    } else {
-        NSLog(@"Counter Value: %i", counter);
-    }
-}
-
-
-// Save & Clear Image
-//
+// Save Image
 - (void)saveImage {
     
     UIGraphicsBeginImageContext(drawingView.bounds.size);
@@ -177,7 +165,7 @@
     NSLog(@"Images Saved:%lu",(unsigned long)userDrawnImages.count);
     preview.image = userDrawnImage;
 }
-
+// Clear Image
 - (void)clearImage {
     
     [(DrawingSurface *)drawingView clearSurface];
