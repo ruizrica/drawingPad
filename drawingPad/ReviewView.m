@@ -19,11 +19,7 @@
 {
     [super viewDidLoad];
     userObjects = model.userInput;
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    
-    UIView *background = [UIView new];
-    background.backgroundColor = [UIColor lightGrayColor];
-    self.collectionView.backgroundView = background;
+    self.collectionView.backgroundColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning
