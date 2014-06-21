@@ -104,16 +104,21 @@
         
         counter++;
     
+        if (counter>=10){
+            [self  goToReview];
+        }
         
+        NSLog(@"Counter %d",counter);
+        
+        [self saveImage];
+        [self clearImage];
     }
     
     
+  
     
-   // controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
-    counter++;
-    
-    [self counterCheck]; // Saves Image
-    [self clearImage];
+   // [self counterCheck]; // Saves Image
+    //[self clearImage];
 }
 
 - (void)popMenu {
