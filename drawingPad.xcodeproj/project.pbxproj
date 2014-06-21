@@ -153,15 +153,14 @@
 			isa = PBXGroup;
 			children = (
 				EB7A21DA1953D86D0089C13D /* Main.storyboard */,
-				5EA38E641956174100E5E591 /* SpeedSelectionViewController.h */,
-				5EA38E651956174100E5E591 /* SpeedSelectionViewController.m */,
 				EBC497101953E6D0009AC3D8 /* Delegate */,
 				EBC497111953E6D6009AC3D8 /* DrawingCode */,
 				EBC497051953E2E0009AC3D8 /* ControlImages */,
 				EB4084B31954FF360070A5D7 /* LessonModel */,
 				EBC497041953E2D4009AC3D8 /* ImageAssets */,
 				EB99D095195561F200AEDAF6 /* ReviewView */,
-				EB99D0991955622C00AEDAF6 /* MainView */,
+				EB99D0991955622C00AEDAF6 /* LessonView */,
+				EB99D09A1956281800AEDAF6 /* SpeedSelectionView */,
 				EB7A21E01953D86D0089C13D /* Images.xcassets */,
 				EB7A21CF1953D86D0089C13D /* Supporting Files */,
 			);
@@ -206,13 +205,22 @@
 			name = ReviewView;
 			sourceTree = "<group>";
 		};
-		EB99D0991955622C00AEDAF6 /* MainView */ = {
+		EB99D0991955622C00AEDAF6 /* LessonView */ = {
 			isa = PBXGroup;
 			children = (
 				EB7A21DD1953D86D0089C13D /* ViewController.h */,
 				EB7A21DE1953D86D0089C13D /* ViewController.m */,
 			);
-			name = MainView;
+			name = LessonView;
+			sourceTree = "<group>";
+		};
+		EB99D09A1956281800AEDAF6 /* SpeedSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5EA38E641956174100E5E591 /* SpeedSelectionViewController.h */,
+				5EA38E651956174100E5E591 /* SpeedSelectionViewController.m */,
+			);
+			name = SpeedSelectionView;
 			sourceTree = "<group>";
 		};
 		EBC497041953E2D4009AC3D8 /* ImageAssets */ = {
