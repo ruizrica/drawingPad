@@ -12,19 +12,12 @@
  
     NSArray *lesson1;
 }
-@synthesize title, symbols, lessonID;
+@synthesize title, symbols, lessonID, userInput;
 
--(id)init {
+- (id)init {
     if (self == nil) {
        return [super init];
     }
-    
-    
-    
-    
-    
-    
-    
     return self;
 }
 @end

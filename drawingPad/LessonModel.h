@@ -13,5 +13,6 @@
 @property (nonatomic,strong) NSString *lessonID;
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSArray *symbols;
+@property (nonatomic,strong) NSArray *userInput;
 
 @end

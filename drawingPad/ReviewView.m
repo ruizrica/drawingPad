@@ -13,12 +13,17 @@
 @end
 
 @implementation ReviewView
-@synthesize collectionArray, userObjects;
+@synthesize collectionArray, userObjects, model;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    userObjects = model.userInput;
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    UIView *background = [UIView new];
+    background.backgroundColor = [UIColor lightGrayColor];
+    self.collectionView.backgroundView = background;
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,6 +31,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     NSLog(@"System Generated Memory Warning");
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return userObjects.count;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"cell";
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    UIImageView *controlImage = (UIImageView *)[cell viewWithTag:100];
+    controlImage.image = [userObjects objectAtIndex:indexPath.row];
+    //UIImageView *userImage = (UIImageView *)[cell viewWithTag:200];
+    //userImage.image = [UIImage imageNamed:[userObjects objectAtIndex:indexPath.row]];
+    
+    return cell;
 }
 
 /*

@@ -16,7 +16,6 @@
     UIImage *userDrawnImage;
     UIBarButtonItem *options;
     int counter;
-    int buttonCounter;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *preview;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
@@ -29,20 +28,26 @@
 - (IBAction)next:(id)sender;
 
 - (void)counterCheck;
-- (void)buttonCounterCheck;
 - (void)saveImage;
 - (void)popMenu;
+- (void)goToReview;
 @end
 
 @implementation ViewController
-@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next;
+@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next, modelObject;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    buttonCounter = 0;
+    
+    modelObject = [[LessonModel alloc]init];
+    
     controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
     userDrawnImages = [[NSMutableArray alloc]init];
+    
+    start_next = [[UIButton alloc]init];
+    [start_next setTitle:@"Start" forState:UIControlStateNormal];
+    [start_next setTitle:@"Next" forState:UIControlStateSelected];
     
     options = [[UIBarButtonItem alloc]
                                 initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(popMenu)];
@@ -52,24 +57,14 @@
 - (IBAction)clear:(id)sender {
     
     [self clearImage];
-   
 }
 
 - (IBAction)next:(id)sender {
-    
     controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
     counter++;
-    buttonCounter++;
-    [self buttonCounterCheck];
     
     [self counterCheck]; // Saves Image
     [self clearImage];
-}
-
-- (void)buttonCounterCheck {
-    if (buttonCounter >= 2) {
-        start_next.titleLabel.text = @"Next";
-    }
 }
 
 - (void)popMenu {
@@ -85,14 +80,20 @@
     switch (buttonIndex) {
         case 0: [self clearImage]; // Reset Lesson
             break;
-        case 1: {
-            ReviewView *review =[self.storyboard instantiateViewControllerWithIdentifier:@"ReviewView"];
-            [self.navigationController pushViewController:review animated:YES];
-        }
+        case 1: [self goToReview];
             break;
         default:
             break;
     }
+}
+
+- (void)goToReview {
+    
+    modelObject.userInput = userDrawnImages;
+    ReviewView *review =[self.storyboard instantiateViewControllerWithIdentifier:@"ReviewView"];
+    review.model = modelObject;
+    
+    [self.navigationController pushViewController:review animated:YES];
 }
 
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet {
