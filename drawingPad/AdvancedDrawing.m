@@ -8,6 +8,11 @@
 
 #import "AdvancedDrawing.h"
 
+// Constants:
+// Pen Width
+static NSString * const penWidth = @"5";
+// Needs to be moved in to main constants file.
+
 @implementation AdvancedDrawing {
     UIBezierPath *path;
     UIImage *incrementalImage;
@@ -22,7 +27,7 @@
         [self setMultipleTouchEnabled:NO];
         [self setBackgroundColor:[UIColor whiteColor]];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:5.0];
+        [path setLineWidth:[penWidth floatValue]];
     }
     return self;
     
@@ -33,7 +38,7 @@
     if (self) {
         [self setMultipleTouchEnabled:NO];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:5.0];
+        [path setLineWidth:[penWidth floatValue]];
     }
     return self;
 }
@@ -54,6 +59,7 @@
     pts[0] = [touch locationInView:self];
 }
 
+// This next method might as well be written in hyroghylics
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -92,17 +98,20 @@
 - (void)drawBitmap
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
-    
-    UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-    [[UIColor whiteColor] setFill];
-    [rectpath fill];
-    
+    // Buggy
     /*if (!incrementalImage) // first time; paint background white
     {
         UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
         [[UIColor whiteColor] setFill];
         [rectpath fill];
     }*/
+    
+    // Stable
+    UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+    [[UIColor whiteColor] setFill];
+    [rectpath fill];
+    
+    
     [incrementalImage drawAtPoint:CGPointZero];
     [[UIColor blackColor] setStroke];
     [path stroke];
