@@ -97,7 +97,7 @@
     modelObject.userInput = userDrawnImages;
     ReviewView *review =[self.storyboard instantiateViewControllerWithIdentifier:@"ReviewView"];
     review.model = modelObject;
-    
+    review.model.symbols = controlImages;
     [self.navigationController pushViewController:review animated:YES];
 }
 

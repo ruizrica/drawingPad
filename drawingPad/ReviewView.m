@@ -41,7 +41,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UIImageView *controlImage = (UIImageView *)[cell viewWithTag:100];
-    controlImage.image = [UIImage imageNamed:[[model getLessonWithID:1] objectAtIndex:indexPath.row]];
+    controlImage.image = [UIImage imageNamed:[model.symbols objectAtIndex:indexPath.row]] ;
     UIImageView *userImage = (UIImageView *)[cell viewWithTag:200];
     userImage.image = [model.userInput objectAtIndex:indexPath.row];
     

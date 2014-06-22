@@ -367,7 +367,7 @@
 				ORGANIZATIONNAME = "iOS Apps Development";
 				TargetAttributes = {
 					EB7A21C41953D86D0089C13D = {
-						DevelopmentTeam = 9R952YN3SA;
+						DevelopmentTeam = 947ZKHWGCF;
 					};
 					EB7A21E51953D86D0089C13D = {
 						TestTargetID = EB7A21C41953D86D0089C13D;
