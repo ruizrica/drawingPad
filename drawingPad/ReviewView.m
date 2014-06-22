@@ -19,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
     //userObjects = model.userInput;
     self.collectionView.backgroundColor = [UIColor redColor];
     
@@ -27,6 +28,10 @@
     UIBarButtonItem *emailButton = [[UIBarButtonItem alloc] initWithTitle:@"email" style:UIBarButtonItemStylePlain
                                                                         target:self action:@selector(email)];
     self.navigationItem.rightBarButtonItem = emailButton;
+=======
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.title = @"Results:";
+>>>>>>> FETCH_HEAD
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,7 +42,6 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    //NSLog(@"userInput count %i",model.userInput.count);
     return model.userInput.count;
     
 }
@@ -46,6 +50,8 @@
     static NSString *identifier = @"cell";
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cvBackground.png"]];
     
     UIImageView *controlImage = (UIImageView *)[cell viewWithTag:100];
     controlImage.image = [UIImage imageNamed:[model.symbols objectAtIndex:indexPath.row]] ;
@@ -85,16 +91,5 @@
     }
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
