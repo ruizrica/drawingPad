@@ -7,8 +7,9 @@
 //
 
 #import "ReviewView.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ReviewView ()
+@interface ReviewView ()<MFMailComposeViewControllerDelegate>
 
 @end
 
@@ -20,6 +21,12 @@
     [super viewDidLoad];
     //userObjects = model.userInput;
     self.collectionView.backgroundColor = [UIColor redColor];
+    
+    //Add a bar button for emailing
+    
+    UIBarButtonItem *emailButton = [[UIBarButtonItem alloc] initWithTitle:@"email" style:UIBarButtonItemStylePlain
+                                                                        target:self action:@selector(email)];
+    self.navigationItem.rightBarButtonItem = emailButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +53,37 @@
     userImage.image = [model.userInput objectAtIndex:indexPath.row];
     
     return cell;
+}
+-(void)email{
+
+    //blank for now
+    
+    MFMailComposeViewController *composeMail = [[MFMailComposeViewController alloc]init];
+    
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *saveResult = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData *myResult  = UIImageJPEGRepresentation(saveResult, 1.0);
+    
+    [composeMail addAttachmentData:myResult mimeType:@"image/jpeg"  fileName:[NSString stringWithFormat: @"a.jpg"]];
+    
+    [self presentViewController:composeMail animated:YES completion:nil];
+    
+    
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+
+    switch (result) {
+        case MFMailComposeResultSent:
+            NSLog(@"Mail Sent");
+            break;
+            
+        default:
+            break;
+    }
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
