@@ -30,11 +30,10 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSLog(@"userInput count %i",model.userInput.count);
+    //NSLog(@"userInput count %i",model.userInput.count);
     return model.userInput.count;
     
 }
-
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"cell";
@@ -42,9 +41,9 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UIImageView *controlImage = (UIImageView *)[cell viewWithTag:100];
-    controlImage.image = [model.userInput objectAtIndex:indexPath.row];
-    //UIImageView *userImage = (UIImageView *)[cell viewWithTag:200];
-    //userImage.image = [UIImage imageNamed:[userObjects objectAtIndex:indexPath.row]];
+    controlImage.image = [UIImage imageNamed:[[model getLessonWithID:1] objectAtIndex:indexPath.row]];
+    UIImageView *userImage = (UIImageView *)[cell viewWithTag:200];
+    userImage.image = [model.userInput objectAtIndex:indexPath.row];
     
     return cell;
 }
