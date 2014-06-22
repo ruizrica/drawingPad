@@ -30,7 +30,9 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSLog(@"userInput count %i",model.userInput.count);
     return model.userInput.count;
+    
 }
 
 

@@ -81,20 +81,28 @@
     
     else if ([sender.currentTitle isEqual:@"Next"]){
         
+        if (counter<=9){
         controlImage.image = [UIImage imageNamed:controlImages[counter]];
         
         //start the countdown
         durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
         
         //accumulate counter
+        
+      
+        
         counter++;
-    
-        if (counter>=11){
-            [self  goToReview];
         }
-        NSLog(@"Counter %d",counter);
+        else {
+            [self  goToReview];
+        
+        NSLog(@"Control Images %d",controlImages.count
+              );
+        
+        }
         [self saveImage];
         [self clearImage];
+    
     }
 }
 
