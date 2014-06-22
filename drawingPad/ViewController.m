@@ -32,9 +32,7 @@
 - (IBAction)clear:(id)sender;
 - (IBAction)next:(UIButton *)sender;
 
-- (void)counterCheck;
 - (void)saveImage;
-- (void)popMenu;
 - (void)goToReview;
 @end
 
@@ -48,10 +46,6 @@
     modelObject = [[LessonModel alloc]init];
     controlImages = [modelObject getLessonWithID:1];
     userDrawnImages = [[NSMutableArray alloc]init];
-
-    options = [[UIBarButtonItem alloc]
-                                initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(popMenu)];
-    self.navigationItem.rightBarButtonItem = options;
     
     //set in counter to 0
     counter = 0;
@@ -81,52 +75,20 @@
     
     else if ([sender.currentTitle isEqual:@"Next"]){
         
-        if (counter<=9){
+        if (counter <= 9){
         controlImage.image = [UIImage imageNamed:controlImages[counter]];
         
         //start the countdown
         durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
         
-        //accumulate counte
-        
+        //accumulate counter
         counter++;
-        }
-        else {
-            [self  goToReview];
-        
-    
-              )
-        
+        } else {
+            [self goToReview];
         }
         [self saveImage];
         [self clearImage];
-    
     }
-}
-
-- (void)popMenu {
-    
-    UIActionSheet *optionsMenu = [[UIActionSheet alloc]initWithTitle:@"Options" delegate:self cancelButtonTitle:@"Dismiss" destructiveButtonTitle:@"Clear Screen" otherButtonTitles:@"ResultsView", nil];
-    
-    [optionsMenu showFromBarButtonItem:options animated:YES];
-}
-
-// ActionSheet Delegate: Selected Button Index
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    switch (buttonIndex) {
-        case 0: [self clearImage]; // Reset Lesson
-            break;
-        case 1: [self goToReview];
-            break;
-        default:
-            break;
-    }
-}
-
-// ActionSheet Delegate: Cancelled
-- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
-    NSLog(@"User Cancelled Selection");
 }
 
 // Push to ReviewView

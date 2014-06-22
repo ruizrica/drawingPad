@@ -130,13 +130,6 @@
                                 <rect key="frame" x="549" y="391" width="151" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7O6-3l-v1v">
-                                <rect key="frame" x="87" y="99" width="86" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -146,7 +139,6 @@
                         <outlet property="controlImageBackground" destination="CPC-dM-eVB" id="Zng-TQ-ibQ"/>
                         <outlet property="drawingView" destination="EEX-qk-m43" id="3kx-L3-srV"/>
                         <outlet property="preview" destination="3Qe-sd-11j" id="dW0-te-Ykb"/>
-                        <outlet property="speedLabel" destination="7O6-3l-v1v" id="BCJ-RB-eAu"/>
                         <outlet property="start_next" destination="Rbo-iu-7Ww" id="x8S-Jh-ll1"/>
                         <outlet property="userInputBackground" destination="7bx-a1-FVE" id="D9H-Vn-bWK"/>
                     </connections>
