@@ -18,8 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //userObjects = model.userInput;
-    self.collectionView.backgroundColor = [UIColor redColor];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.title = @"Results:";
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,7 +30,6 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    //NSLog(@"userInput count %i",model.userInput.count);
     return model.userInput.count;
     
 }
@@ -40,6 +39,8 @@
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cvBackground.png"]];
+    
     UIImageView *controlImage = (UIImageView *)[cell viewWithTag:100];
     controlImage.image = [UIImage imageNamed:[model.symbols objectAtIndex:indexPath.row]] ;
     UIImageView *userImage = (UIImageView *)[cell viewWithTag:200];
@@ -47,16 +48,5 @@
     
     return cell;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
