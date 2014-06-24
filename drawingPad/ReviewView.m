@@ -19,19 +19,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
+
     //userObjects = model.userInput;
     self.collectionView.backgroundColor = [UIColor redColor];
     
     //Add a bar button for emailing
-    
     UIBarButtonItem *emailButton = [[UIBarButtonItem alloc] initWithTitle:@"email" style:UIBarButtonItemStylePlain
-                                                                        target:self action:@selector(email)];
+        target:self action:@selector(email)];
+    
     self.navigationItem.rightBarButtonItem = emailButton;
-=======
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.title = @"Results:";
->>>>>>> FETCH_HEAD
 }
 
 - (void)didReceiveMemoryWarning
