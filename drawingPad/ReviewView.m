@@ -9,7 +9,7 @@
 #import "ReviewView.h"
 #import <MessageUI/MessageUI.h>
 
-@interface ReviewView ()<MFMailComposeViewControllerDelegate>
+@interface ReviewView ()<MFMailComposeViewControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -66,11 +66,13 @@
     if ([MFMailComposeViewController canSendMail]) {
     
     MFMailComposeViewController *composeMail = [[MFMailComposeViewController alloc]init];
+        
     
     [composeMail setToRecipients:@[@"admin@iosappsdev.org"]];
     [composeMail setSubject:@"Test Email From TRIP"];
+    composeMail.mailComposeDelegate = self;
     composeMail.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    composeMail.modalPresentationStyle = UIModalPresentationFormSheet;
+    composeMail.modalPresentationStyle = UIModalPresentationFullScreen;
     
     UIGraphicsBeginImageContext(self.view.bounds.size);
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -116,7 +118,7 @@
         default:
             break;
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
