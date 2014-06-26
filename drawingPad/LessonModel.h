@@ -10,9 +10,15 @@
 
 @interface LessonModel : NSObject
 
-@property (nonatomic,strong) NSString *lessonID;
+@property (nonatomic,strong) NSString *lessonID; //Unused
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSArray *symbols;
 @property (nonatomic,strong) NSArray *userInput;
+
+// Lessons
+@property (nonatomic,strong) NSArray *lesson_1;
+
+// Methods
+- (NSArray *)getLessonWithID:(int)lessonID;
 
 @end

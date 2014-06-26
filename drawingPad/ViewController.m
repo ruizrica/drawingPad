@@ -16,7 +16,12 @@
     UIImage *userDrawnImage;
     UIBarButtonItem *options;
     int counter;
+    NSTimer* durationTimer;
 }
+
+@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
+
+//<-- temporary
 @property (strong, nonatomic) IBOutlet UIImageView *preview;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImage;
@@ -25,93 +30,78 @@
 @property (strong, nonatomic) IBOutlet UIButton *start_next;
 
 - (IBAction)clear:(id)sender;
-- (IBAction)next:(id)sender;
+- (IBAction)next:(UIButton *)sender;
 
-- (void)counterCheck;
 - (void)saveImage;
-- (void)popMenu;
 - (void)goToReview;
 @end
 
 @implementation ViewController
-@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next, modelObject;
+@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next, modelObject,speedLabel,speed;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    speedLabel.text = [NSString stringWithFormat:@"%d",speed] ;
     modelObject = [[LessonModel alloc]init];
-    
-    controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
+    controlImages = [modelObject getLessonWithID:1];
     userDrawnImages = [[NSMutableArray alloc]init];
     
-    start_next = [[UIButton alloc]init];
-    [start_next setTitle:@"Start" forState:UIControlStateNormal];
-    [start_next setTitle:@"Next" forState:UIControlStateSelected];
-    
-    options = [[UIBarButtonItem alloc]
-                                initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(popMenu)];
-    self.navigationItem.rightBarButtonItem = options;
+    //set in counter to 0
+    counter = 0;
 }
 
 - (IBAction)clear:(id)sender {
-    
+
     [self clearImage];
 }
 
-- (IBAction)next:(id)sender {
-    controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
-    counter++;
+- (IBAction)next:(UIButton *)sender {
     
-    [self counterCheck]; // Saves Image
-    [self clearImage];
-}
-
-- (void)popMenu {
+    if ([sender.currentTitle  isEqual: @"Start"]) {
+        
+        //Change the button title from Start to Next
+        [sender setTitle:@"Next" forState:UIControlStateNormal];
+        
+        //Flash the first image
+        controlImage.image = [UIImage imageNamed:controlImages[0]];
+        
+        //start the countdown
+        durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
+       
+        //accumulate counter
+        counter++;
+        }
     
-    UIActionSheet *optionsMenu = [[UIActionSheet alloc]initWithTitle:@"Options" delegate:self cancelButtonTitle:@"Dismiss" destructiveButtonTitle:@"Clear Screen" otherButtonTitles:@"ResultsView", nil];
-    
-    [optionsMenu showFromBarButtonItem:options animated:YES];
-}
-
-// Delegate Methods
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    switch (buttonIndex) {
-        case 0: [self clearImage]; // Reset Lesson
-            break;
-        case 1: [self goToReview];
-            break;
-        default:
-            break;
+    else if ([sender.currentTitle isEqual:@"Next"]){
+        
+        if (counter <= 9){
+        controlImage.image = [UIImage imageNamed:controlImages[counter]];
+        
+        //start the countdown
+        durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
+        
+        //accumulate counter
+        counter++;
+        } else {
+            [self goToReview];
+        }
+        [self saveImage];
+        [self clearImage];
     }
 }
 
+// Push to ReviewView
 - (void)goToReview {
     
     modelObject.userInput = userDrawnImages;
     ReviewView *review =[self.storyboard instantiateViewControllerWithIdentifier:@"ReviewView"];
     review.model = modelObject;
-    
+    review.model.symbols = controlImages;
     [self.navigationController pushViewController:review animated:YES];
 }
 
-- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
-    NSLog(@"User Cancelled Selection");
-}
-//
-- (void)counterCheck {
-
-    if (counter >= 2) {
-        [self saveImage];
-    } else {
-        NSLog(@"Counter Value: %i", counter);
-    }
-}
-
-
-// Save & Clear Image
-//
+// Save Image
 - (void)saveImage {
     
     UIGraphicsBeginImageContext(drawingView.bounds.size);
@@ -124,10 +114,16 @@
     preview.image = userDrawnImage;
 }
 
+// Clear Image
 - (void)clearImage {
     
     [(DrawingSurface *)drawingView clearSurface];
      preview.image = nil;
 }
 
+// Clear Control Image
+-(void)clearControlImage{
+    controlImage.image = nil;
+    NSLog(@"Cleared!");
+}
 @end
