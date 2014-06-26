@@ -26,6 +26,7 @@
 		EB7A21F41953D86D0089C13D /* drawingPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7A21F31953D86D0089C13D /* drawingPadTests.m */; };
 		EB7A21FE1953D8FF0089C13D /* drawBoundry.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7A21FD1953D8FF0089C13D /* drawBoundry.png */; };
 		EB7A22001953D9A70089C13D /* drawBoundry_user.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7A21FF1953D9A70089C13D /* drawBoundry_user.png */; };
+		EB8217D2195A95C4007CD0A7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8217D1195A95C4007CD0A7 /* Constants.m */; };
 		EB99D0981955621D00AEDAF6 /* ReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB99D0971955621D00AEDAF6 /* ReviewView.m */; };
 		EB99D0A61956290E00AEDAF6 /* symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB99D09C1956290E00AEDAF6 /* symbol_1.png */; };
 		EB99D0A71956290E00AEDAF6 /* symbol_10.png in Resources */ = {isa = PBXBuildFile; fileRef = EB99D09D1956290E00AEDAF6 /* symbol_10.png */; };
@@ -85,6 +86,8 @@
 		EB7A21F31953D86D0089C13D /* drawingPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawingPadTests.m; sourceTree = "<group>"; };
 		EB7A21FD1953D8FF0089C13D /* drawBoundry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawBoundry.png; sourceTree = "<group>"; };
 		EB7A21FF1953D9A70089C13D /* drawBoundry_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawBoundry_user.png; sourceTree = "<group>"; };
+		EB8217D0195A95C4007CD0A7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		EB8217D1195A95C4007CD0A7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EB99D0961955621D00AEDAF6 /* ReviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewView.h; sourceTree = "<group>"; };
 		EB99D0971955621D00AEDAF6 /* ReviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewView.m; sourceTree = "<group>"; };
 		EB99D09C1956290E00AEDAF6 /* symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = symbol_1.png; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 				EB7A21DA1953D86D0089C13D /* Main.storyboard */,
 				EBC497101953E6D0009AC3D8 /* Delegate */,
 				EBC497111953E6D6009AC3D8 /* DrawingCode */,
+				EB8217CF195A9594007CD0A7 /* Constants */,
 				EBC497051953E2E0009AC3D8 /* ControlImages */,
 				EB4084B31954FF360070A5D7 /* LessonModel */,
 				EBC497041953E2D4009AC3D8 /* ImageAssets */,
@@ -220,6 +224,15 @@
 				EB7A21F01953D86D0089C13D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB8217CF195A9594007CD0A7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EB8217D0195A95C4007CD0A7 /* Constants.h */,
+				EB8217D1195A95C4007CD0A7 /* Constants.m */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		EB99D095195561F200AEDAF6 /* ReviewView */ = {
@@ -453,6 +466,7 @@
 				EB7A21D51953D86D0089C13D /* main.m in Sources */,
 				EB99D0981955621D00AEDAF6 /* ReviewView.m in Sources */,
 				5EA38E661956174100E5E591 /* SpeedSelectionViewController.m in Sources */,
+				EB8217D2195A95C4007CD0A7 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

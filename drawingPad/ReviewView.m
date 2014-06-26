@@ -60,9 +60,17 @@
 }
 -(void)email{
 
-    //blank for now
+    // Should use NSUserDefaults set from UI somewhere.
+    // Maybe we prompt to enter email at app 1st use...
+    
+    if ([MFMailComposeViewController canSendMail]) {
     
     MFMailComposeViewController *composeMail = [[MFMailComposeViewController alloc]init];
+    
+    [composeMail setToRecipients:@[@"admin@iosappsdev.org"]];
+    [composeMail setSubject:@"Test Email From TRIP"];
+    composeMail.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    composeMail.modalPresentationStyle = UIModalPresentationFormSheet;
     
     UIGraphicsBeginImageContext(self.view.bounds.size);
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -74,20 +82,41 @@
     
     [self presentViewController:composeMail animated:YES completion:nil];
     
-    
+    } else {
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:alertTitle message:@"There is no email account configured on this device.  Please add a email account in 'Settings' if you wish to email from the Trip app." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+        
+        [alert show];
+    }
 }
 
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
-
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
     switch (result) {
-        case MFMailComposeResultSent:
-            NSLog(@"Mail Sent");
-            break;
+        case MFMailComposeResultSent: {
             
+            NSLog(@"ResultSent");
+        }
+            break;
+        case MFMailComposeResultCancelled: {
+            
+            NSLog(@"ResultCancelled");
+        }
+            break;
+        case MFMailComposeResultFailed: {
+            
+            NSLog(@"ResultFailed");
+        }
+            break;
+        case MFMailComposeResultSaved: {
+           
+            NSLog(@"ResultSaved");
+        }
+            break;
         default:
             break;
     }
-    [controller dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
