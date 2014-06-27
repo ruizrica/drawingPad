@@ -57,8 +57,13 @@
         
         lesson_8B = @[@"99",@"12",@"54",@"62",@"78",@"662",@"239",@"434",@"519",@"922"];
         lesson_8C = @[@"DF",@"WT",@"SP",@"AG",@"NV",@"WCW",@"JHP",@"CFF",@"GAZ",@"BEL"];
-        lesson_8D = @[@"in",@"some",@"go",@"to",@"with",@"me",@"then",@"his",@"when",@"have"];
+        lesson_8D = @[@"old",@"very",@"ran",@"let",@"high",@"eat",@"into",@"want",@"much",@"father"];
+        lesson_8E = @[@"into",@"want",@"let",@"much",@"old",@"eat",@"high",@"ran",@"very",@"father"];
         
+        lesson_9B = @[@"36",@"19",@"42",@"896",@"221",@"771",@"8324",@"9169",@"2131",@"1114"];
+        lesson_9C = @[@"UT",@"AC",@"IA",@"NZM",@"CDC",@"MOF",@"CQRT",@"KJDO",@"PSJZ",@"OAFS"];
+        lesson_9D = @[@"big",@"know",@"find",@"next",@"each",@"am",@"your",@"night",@"open",@"every"];
+        lesson_9E = @[@"find",@"night",@"your",@"am",@"big",@"every",@"each",@"know",@"next",@"open"];
         
     }
      }
