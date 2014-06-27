@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="-1071" y="-379"/>
         </scene>
-        <!--View Controller - TRIP | Codename: "Mango" ALPHA 1.1 DEVELOPER PREVIEW-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -128,7 +128,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TRIP | Codename: &quot;Mango&quot; ALPHA 1.1 DEVELOPER PREVIEW" id="cQP-CV-8xr"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="controlImage" destination="6Bw-Hp-0Vn" id="jeT-9x-MFI"/>
                         <outlet property="drawingView" destination="EEX-qk-m43" id="3kx-L3-srV"/>
@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208" y="-379"/>
+            <point key="canvasLocation" x="76" y="-379"/>
         </scene>
         <!--Review View-->
         <scene sceneID="Eqz-G1-ccc">
@@ -197,26 +197,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a45-fh-ykX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2308" y="-379"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Kwp-Ix-mfC">
-            <objects>
-                <navigationController storyboardIdentifier="LessonNAV" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WBi-Mw-Deo" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="06f-Kp-Dru">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hND-vG-AsQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nNS-JX-eOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="31" y="-379"/>
+            <point key="canvasLocation" x="1204" y="-379"/>
         </scene>
     </scenes>
     <resources>

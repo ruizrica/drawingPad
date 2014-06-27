@@ -51,6 +51,11 @@
     counter = 0;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (IBAction)clear:(id)sender {
 
     [self clearImage];
@@ -98,7 +103,8 @@
     ReviewView *review =[self.storyboard instantiateViewControllerWithIdentifier:@"ReviewView"];
     review.model = modelObject;
     review.model.symbols = controlImages;
-    [self.navigationController pushViewController:review animated:YES];
+    //[self.navigationController pushViewController:review animated:YES];
+    [self presentViewController:review animated:YES completion:nil];
 }
 
 // Save Image

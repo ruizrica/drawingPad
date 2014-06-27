@@ -34,6 +34,11 @@ static int const FLASHING_SPEED = 1;
     // Do any additional setup after loading the view.
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -56,11 +61,11 @@ static int const FLASHING_SPEED = 1;
     ViewController *mainScreen =[self.storyboard instantiateViewControllerWithIdentifier:@"MainScreen"];
     
     mainScreen.speed = FLASHING_SPEED * sender.tag;
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainScreen];
+    //UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainScreen];
     
-    nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    mainScreen.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    [self presentViewController:nav animated:YES completion:nil];
+    [self presentViewController:mainScreen animated:YES completion:nil];
     
     
 }
