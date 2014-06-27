@@ -34,27 +34,19 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
-  self.path = [UIBezierPath bezierPath];
+    self.path = [UIBezierPath bezierPath];
     path.lineWidth = 30.0f;
     
    [collectionOfPaths addObject:path];
-    
     UITouch *touch = [touches anyObject];
-    
     [[self.collectionOfPaths lastObject] moveToPoint:[touch locationInView:self]];
-    
-    
-    
-
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 
-
     UITouch *touch =  [touches anyObject];
     [[self.collectionOfPaths lastObject] addLineToPoint:[touch locationInView:self]];
      [self setNeedsDisplay];
-    
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -62,8 +54,6 @@
     UITouch *touch =[touches anyObject];
     [[self.collectionOfPaths lastObject] addLineToPoint:[touch locationInView:self]];
     [self setNeedsDisplay];
-
-              
 }
 
 // Only override drawRect: if you perform custom drawing.
