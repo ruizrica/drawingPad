@@ -65,9 +65,60 @@
         lesson_9D = @[@"big",@"know",@"find",@"next",@"each",@"am",@"your",@"night",@"open",@"every"];
         lesson_9E = @[@"find",@"night",@"your",@"am",@"big",@"every",@"each",@"know",@"next",@"open"];
         
-    }
-     }
+        lesson_10B = @[@"33",@"62",@"178",@"923",@"672",@"828",@"2191",@"3928",@"5411",@"8676"];
+        lesson_10C = @[@"NB",@"QL",@"FGA",@"BCO",@"YSE",@"CCO",@"BLKO",@"UCEE",@"WRPR",@"DBDB"];
+        lesson_10D = @[@"just",@"want",@"if",@"find",@"man",@"big",@"good",@"ran",@"very",@"back"];
+        lesson_10E = @[@"want",@"good",@"find",@"man",@"if",@"big",@"back",@"very",@"just",@"ran"];
         
+        lesson_11B = @[@"31",@"98",@"162",@"977",@"226",@"488",@"255",@"9677",@"3712",@"1133"];
+        lesson_11C = @[@"FL",@"UQ",@"AAC",@"DOQ",@"XVW",@"BJL",@"IRS",@"MONB",@"TACG",@"BMWV"];
+        lesson_11D = @[@"tree",@"bring",@"men",@"white",@"as",@"again",@"work",@"day",@"around",@"after"];
+        lesson_11E = @[@"day",@"white",@"around",@"men",@"after",@"work",@"again",@"tree",@"as",@"bring"];
+        
+        lesson_12B = @[@"18",@"62",@"334",@"498",@"8623",@"7711",@"6799",@"1888",@"9676",@"5416"];
+        lesson_12C = @[@"GL",@"ME",@"GZB",@"AUF",@"TRRT",@"NMOO",@"BCDC",@"AZVW",@"HCOB",@"PWIK"];
+        lesson_12D = @[@"girl",@"walk",@"year",@"more",@"live",@"cold",@"seven",@"never",@"home",@"many"];
+        lesson_12E = @[@"home",@"seven",@"year",@"more",@"walk",@"could",@"girl",@"never",@"many",@"live"];
+        
+        lesson_13A = @[@"L3",@"4B",@"Q2",@"2V",@"4F",@"W9",@"6A",@"Y2",@"A6",@"Y3"];
+        lesson_13B = @[@"S2",@"3V",@"W9",@"3Z",@"F1",@"U9",@"H7",@"Z8",@"9A",@"E2"];
+        lesson_13C = @[@"tree",@"live",@"am",@"never",@"know",@"girl",@"after",@"again",@"seven",@"white"];
+        lesson_13D = @[@"am",@"seven",@"tree",@"girl",@"know",@"live",@"white",@"never",@"after",@"again"];
+        
+        
+        lesson_14A = @[@"2F",@"T8",@"9O",@"C3",@"8D",@"1R",@"T3",@"B9",@"1K",@"D5"];
+        lesson_14B = @[@"Q6",@"K9",@"8U",@"Z2",@"X4",@"2A",@"I9",@"7B",@"H2",@"3J"];
+        lesson_14C = @[@"been",@"how",@"boy",@"over",@"jump",@"thing",@"only",@"funny",@"like",@"try"];
+        lesson_14D = @[@"like",@"over",@"funny",@"only",@"boy",@"try",@"jump",@"thing",@"been",@"how"];
+        
+        lesson_15A = @[@"A8",@"6L",@"V3",@"9C",@"K6",@"3T",@"O1",@"9G",@"4Z",@"X2"];
+        lesson_15B = @[@"G3",@"W2",@"L9",@"6A",@"H2",@"S4",@"3G",@"9T",@"P2",@"B4"];
+        lesson_15C = @[@"my",@"mother",@"who",@"last",@"box",@"take",@"long",@"because",@"any",@"before"];
+        lesson_15D = @[@"take",@"last",@"any",@"who",@"long",@"mother",@"my",@"before",@"box",@"because"];
+        
+        lesson_16A = @[@"on",@"did",@"some",@"this",@"will",@"come",@"have",@"when",@"put",@"that"];
+        lesson_16B = @[@"said",@"what",@"was",@"but",@"one",@"the",@"with",@"no",@"on",@"you"];
+        lesson_16C = @[@"must",@"same",@"head",@"other",@"best",@"eyes",@"down",@"school",@"off",@"show"];
+        lesson_16D = @[@"off",@"school",@"down",@"same",@"other",@"head",@"best",@"eyes",@"must",@"show"];
+        
+        lesson_17A = @[@"about",@"they",@"left",@"want",@"much",@"morning",@"little",@"would",@"very",@"father"];
+        lesson_17B = @[@"were",@"their",@"back",@"two",@"from",@"high",@"went",@"get",@"old",@"into"];
+        lesson_17C = @[@"how",@"best",@"jump",@"off",@"over",@"because",@"who",@"before",@"last",@"like"];
+        lesson_17D = @[@"last",@"jump",@"over",@"off",@"because",@"how",@"like",@"who",@"best",@"before"];
+        
+        lesson_18A = @[@"open",@"walk",@"year",@"thing",@"next",@"every",@"could",@"many",@"been",@"jump"];
+        lesson_18B = @[@"white",@"find",@"know",@"your",@"around",@"again",@"after",@"only",@"how",@"who"];
+        lesson_18C = @[@"by",@"better",@"dog",@"three",@"has",@"should",@"up",@"cold",@"these",@"right"];
+        lesson_18D = @[@"cold",@"should",@"dog",@"three",@"these",@"by",@"right",@"has",@"up",@"better"];
+        
+        lesson_19A = @[@"night",@"men",@"work",@"home",@"girl",@"all",@"not",@"then",@"his",@"him"];
+        lesson_19B = @[@"and",@"what",@"they",@"came",@"ran",@"want",@"went",@"their",@"many",@"seven"];
+        lesson_19C = @[@"away",@"sleep",@"people",@"ride",@"too",@"fast",@"book",@"small",@"face",@"hard"];
+        lesson_19D = @[@"hard",@"sleep",@"people",@"small",@"too",@"fast",@"book",@"face",@"away",@"ride"];
+        
+         lesson_20A = @[@"should",@"better",@"school",@"off",@"of",@"because",@"before",@"people",@"face", @"mother"];
+         lesson_20B = @[@"any",@"best",@"away",@"these", @"right", @"could", @"cold",@"three", @"who", @"down"];
+         
     }
     return self;
 }
