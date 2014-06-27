@@ -118,6 +118,9 @@
         
          lesson_20A = @[@"should",@"better",@"school",@"off",@"of",@"because",@"before",@"people",@"face", @"mother"];
          lesson_20B = @[@"any",@"best",@"away",@"these", @"right", @"could", @"cold",@"three", @"who", @"down"];
+         lesson_20C = @[@"by",@"fast",@"show",@"these", @"ride", @"eyes", @"away",@"right", @"face", @"people"];
+         lesson_20D = @[@"ride",@"eyes",@"show",@"face", @"right", @"by", @"people",@"these", @"fast", @"away"];
+         
          
     }
     return self;
