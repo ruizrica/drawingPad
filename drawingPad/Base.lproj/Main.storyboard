@@ -7,7 +7,7 @@
         <!--Speed Selection View Controller-->
         <scene sceneID="5Qj-Hj-nyY">
             <objects>
-                <viewController id="9fv-T5-K0B" customClass="SpeedSelectionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SpeedSelectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9fv-T5-K0B" customClass="SpeedSelectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6xp-NF-ChN"/>
                         <viewControllerLayoutGuide type="bottom" id="P32-0G-YQn"/>
@@ -202,7 +202,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Kwp-Ix-mfC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WBi-Mw-Deo" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LessonNAV" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WBi-Mw-Deo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="06f-Kp-Dru">
@@ -218,26 +218,9 @@
             </objects>
             <point key="canvasLocation" x="31" y="-379"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="u3e-od-MK8">
-            <objects>
-                <viewController id="uri-Fk-Yhl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nB1-EI-A3l"/>
-                        <viewControllerLayoutGuide type="bottom" id="QM3-bN-UHa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bRa-Fb-D3q">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f1X-ka-z28" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
-        <image name="home.png" width="2130" height="1558"/>
+        <image name="home.png" width="1065" height="779"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
