@@ -8,60 +8,100 @@
 
 #import "ViewController.h"
 #import "DrawingSurface.h"
+#import "ReviewView.h"
 
-@interface ViewController () {
+@interface ViewController ()<UIActionSheetDelegate> {
     NSArray *controlImages;
     NSMutableArray *userDrawnImages;
     UIImage *userDrawnImage;
+    UIBarButtonItem *options;
     int counter;
+    NSTimer* durationTimer;
 }
+
+@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
+
+//<-- temporary
 @property (strong, nonatomic) IBOutlet UIImageView *preview;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImage;
 @property (strong, nonatomic) IBOutlet UIImageView *userInputBackground;
 @property (strong, nonatomic) IBOutlet UIView *drawingView;
+@property (strong, nonatomic) IBOutlet UIButton *start_next;
 
 - (IBAction)clear:(id)sender;
-- (IBAction)next:(id)sender;
-- (void)counterCheck;
+- (IBAction)next:(UIButton *)sender;
+
 - (void)saveImage;
+- (void)goToReview;
 @end
 
 @implementation ViewController
-@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview;
+@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next, modelObject,speedLabel,speed;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //
-    //drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"userInputBackground.png"]];
-    controlImages = @[@"symbol_A.png", @"symbol_B.png",@"symbol_J.png",@"symbol_m.png",@"symbol_R.png" ];
+    speedLabel.text = [NSString stringWithFormat:@"%d",speed] ;
+    modelObject = [[LessonModel alloc]init];
+    controlImages = [modelObject getLessonWithID:1];
     userDrawnImages = [[NSMutableArray alloc]init];
+    
+    //set in counter to 0
+    counter = 0;
 }
 
 - (IBAction)clear:(id)sender {
-    
-    [self clearImage];
-    preview.image = nil;
-}
 
-- (IBAction)next:(id)sender {
-    
-    controlImage.image = [UIImage imageNamed:[controlImages objectAtIndex: arc4random() % controlImages.count]];
-    counter++;
-    [self counterCheck]; // Saves Image
     [self clearImage];
 }
 
-- (void)counterCheck {
-
-    if (counter >= 2) {
+- (IBAction)next:(UIButton *)sender {
+    
+    if ([sender.currentTitle  isEqual: @"Start"]) {
+        
+        //Change the button title from Start to Next
+        [sender setTitle:@"Next" forState:UIControlStateNormal];
+        
+        //Flash the first image
+        controlImage.image = [UIImage imageNamed:controlImages[0]];
+        
+        //start the countdown
+        durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
+       
+        //accumulate counter
+        counter++;
+        }
+    
+    else if ([sender.currentTitle isEqual:@"Next"]){
+        
+        if (counter <= 9){
+        controlImage.image = [UIImage imageNamed:controlImages[counter]];
+        
+        //start the countdown
+        durationTimer = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(clearControlImage) userInfo:nil  repeats:NO];
+        
+        //accumulate counter
+        counter++;
+        } else {
+            [self goToReview];
+        }
         [self saveImage];
-    } else {
-        NSLog(@"Counter Value: %i", counter);
+        [self clearImage];
     }
 }
 
+// Push to ReviewView
+- (void)goToReview {
+    
+    modelObject.userInput = userDrawnImages;
+    ReviewView *review =[self.storyboard instantiateViewControllerWithIdentifier:@"ReviewView"];
+    review.model = modelObject;
+    review.model.symbols = controlImages;
+    [self.navigationController pushViewController:review animated:YES];
+}
+
+// Save Image
 - (void)saveImage {
     
     UIGraphicsBeginImageContext(drawingView.bounds.size);
@@ -74,9 +114,16 @@
     preview.image = userDrawnImage;
 }
 
+// Clear Image
 - (void)clearImage {
     
     [(DrawingSurface *)drawingView clearSurface];
+     preview.image = nil;
 }
 
+// Clear Control Image
+-(void)clearControlImage{
+    controlImage.image = nil;
+    NSLog(@"Cleared!");
+}
 @end
