@@ -25,7 +25,9 @@ static NSString * const penWidth = @"5";
     if (self = [super initWithCoder:aDecoder])
     {
         [self setMultipleTouchEnabled:NO];
-        [self setBackgroundColor:[UIColor whiteColor]];
+        //[self setBackgroundColor:[UIColor whiteColor]];
+        //[[UIColor whiteColor] setStroke];
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backdrop.jpg"]];
         path = [UIBezierPath bezierPath];
         [path setLineWidth:[penWidth floatValue]];
     }
@@ -49,6 +51,7 @@ static NSString * const penWidth = @"5";
 - (void)drawRect:(CGRect)rect
 {
     [incrementalImage drawInRect:rect];
+    [[UIColor whiteColor] setStroke];
     [path stroke];
 }
 
@@ -108,12 +111,13 @@ static NSString * const penWidth = @"5";
     
     // Stable
     UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-    [[UIColor whiteColor] setFill];
+    [[UIColor colorWithPatternImage:[UIImage imageNamed:@"backdrop.jpg"]] setFill];
     [rectpath fill];
+    NSLog(@"rectPath");
     
     
     [incrementalImage drawAtPoint:CGPointZero];
-    [[UIColor blackColor] setStroke];
+    [[UIColor whiteColor] setStroke];
     [path stroke];
     incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

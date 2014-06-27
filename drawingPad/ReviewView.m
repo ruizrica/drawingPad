@@ -86,7 +86,7 @@
     
     } else {
         
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:alertTitle message:@"There is no email account configured on this device.  Please add a email account in 'Settings' if you wish to email from the Trip app." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Trip" message:@"There is no email account configured on this device.  Please add a email account in 'Settings' if you wish to email from the Trip app." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
         
         [alert show];
     }
