@@ -12,7 +12,7 @@
 @synthesize symbols, userInput;
 
 // Lesson 1
-@synthesize lesson_1,lesson_1A,lesson_1B,lesson_2C,lesson_1D,lesson_1E;
+@synthesize lesson_1,lesson_1A,lesson_1B,lesson_1C,lesson_1D,lesson_1E;
 // Lesson 2
 @synthesize lesson_2,lesson_2A,lesson_2B,lesson_2C,lesson_2D,lesson_2E;
 // Lesson 3
@@ -38,7 +38,7 @@
 // Lesson 13
 @synthesize lesson_13,lesson_13A,lesson_13B,lesson_13C,lesson_13D,lesson_13E;
 // Lesson 14
-@synthesize lesson_14,lesson_14A,lesson_14B,lesson_14,lesson_14D,lesson_14E;
+@synthesize lesson_14,lesson_14A,lesson_14B,lesson_14C,lesson_14D,lesson_14E;
 // Lesson 15
 @synthesize lesson_15,lesson_15A,lesson_15B,lesson_15C,lesson_15D,lesson_15E;
 // Lesson 16
@@ -51,7 +51,6 @@
 @synthesize lesson_19,lesson_19A,lesson_19B,lesson_19C,lesson_19D,lesson_19E;
 // Lesson 20
 @synthesize lesson_20,lesson_20A,lesson_20B,lesson_20C,lesson_20D,lesson_20E;
-
 
 #pragma mark - Methods
 - (NSArray *)getLessonWithID:(int)lesson_ID {
@@ -104,46 +103,61 @@
     }
     return selectedArray;
 }
-
 - (id)init {
     self = [super init];
     if (self) {
         
+
         // Image Arrays:
         lesson_1 = @[@"symbol_1.png",@"symbol_2.png",@"symbol_3.png",@"symbol_4.png",@"symbol_5.png",@"symbol_6.png",@"symbol_7.png",@"symbol_8.png",@"symbol_9.png",@"symbol_10.png"];
-        lesson_2 = @[];
-        lesson_3 = @[];
-        lesson_4 = @[];
-        lesson_5 = @[];
-        lesson_6 = @[];
-        lesson_7 = @[];
-        lesson_8 = @[];
-        lesson_9 = @[];
+        //lesson_1 = @[lesson_1A,lesson_1B,lesson_1C,lesson_1D,lesson_1E];
+        //lesson_2 = @[lesson_2A,lesson_2B,lesson_2C,lesson_2D,lesson_2E];
+        //lesson_3 = @[lesson_3A,lesson_3B,lesson_3C,lesson_3D,lesson_3E];
+        //lesson_4 = @[lesson_4A,lesson_4B,lesson_4C,lesson_4D,lesson_4E];
+        //lesson_5 = @[lesson_5A,lesson_5B,lesson_5C,lesson_5D,lesson_5E];
+        //lesson_6 = @[lesson_6A,lesson_6B,lesson_6C,lesson_6D,lesson_6E];
+        //lesson_7 = @[lesson_7A,lesson_7B,lesson_7C,lesson_7D,lesson_7E];
+        //lesson_8 = @[lesson_8A,lesson_8B,lesson_8C,lesson_8D,lesson_8E];
+        //lesson_9 = @[lesson_9A,lesson_9B,lesson_9C,lesson_9D,lesson_9E];
+        //lesson_10 = @[lesson_10A,lesson_10B,lesson_10C,lesson_10D,lesson_10E];
+        //lesson_11 = @[lesson_11A,lesson_11B,lesson_11C,lesson_11D,lesson_11E];
+        //lesson_12 = @[lesson_12A,lesson_12B,lesson_12C,lesson_12D,lesson_12E];
+        //lesson_13 = @[lesson_13A,lesson_13B,lesson_13C,lesson_13D,lesson_13E];
+        //lesson_14 = @[lesson_14A,lesson_14B,lesson_14C,lesson_14D,lesson_14E];
+        //lesson_15 = @[lesson_15A,lesson_15B,lesson_15C,lesson_15D,lesson_15E];
+        //lesson_16 = @[lesson_16A,lesson_16B,lesson_16C,lesson_16D,lesson_16E];
+        //lesson_17 = @[lesson_17A,lesson_17B,lesson_17C,lesson_17D,lesson_17E];
+        //lesson_18 = @[lesson_18A,lesson_18B,lesson_18C,lesson_18D,lesson_18E];
+        //lesson_19 = @[lesson_19A,lesson_19B,lesson_19C,lesson_19D,lesson_19E];
+        //lesson_20 = @[lesson_20A,lesson_20B,lesson_20C,lesson_20D,lesson_20E];
         
+        // Sub-Sections
         // Lesson 1
-        lesson_1A = @[];
-        lesson_1B = @[];
-        lesson_1C = @[];
-        lesson_1D = @[];
-        lesson_1E = @[];
+        //lesson_1A = @[];
+        //lesson_1B = @[@"3", @"2", @"5",@"8",@"9",@"11",@"21",@"50",@"32", @"44"];
+        //lesson_1C = @[@"B",@"F",@"A",@"G", @"O",@"ST",@"BL",@"VX", @"CQ",@"JM"];
+        //lesson_1D = @[@"on",@"had",@"a",@"for",@"it", @"the",@"him",@"no",@"and",@"that"];
+        //lesson_1E = @[@"had",@"it",@"that",@"him",@"a",@"and",@"no",@"for",@"on",@"the"];
 
         // Lesson 2
-        lesson_2A =@[@""];
-        lesson_2B = @[@"9",@"3", @"8", @"2", @"4",@"13", @"82", @"31", @"99", @"67"];
-        lesson_2C = @[@"N",@"P",@"A",@"Z",@"R";"OA",@"PF",@"DL",@"SL",@"ZJ"];
-        lesson_2D = @[@"we",@"did",@"you",@"will",@"but",@"put"@"I",@"he",@"one",@"is"];
-        lesson_2E = @[@"I",@"but",@"will",@"did",@"he",@"you",@"one",@"we",@"is",@"put"];
+        //lesson_2A =@[];
+        //lesson_2B = @[@"9",@"3", @"8", @"2", @"4",@"13", @"82", @"31", @"99", @"67"];
+        //lesson_2C = @[@"N",@"P",@"A",@"Z",@"R",@"OA",@"PF",@"DL",@"SL",@"ZJ"];
+        //lesson_2D = @[@"we",@"did",@"you",@"will",@"but",@"put",@"I",@"he",@"one",@"is"];
+        //lesson_2E = @[@"I",@"but",@"will",@"did",@"he",@"you",@"one",@"we",@"is",@"put"];
     
         // Lesson 3
-        lesson_3B = @[@"4",@"8",@"2",@"1",@"3",@"48",@"23",@"49",@"82",@"77"];
-        lesson_3C = @[@"F",@"T",@"U",@"P",@"Y",@"BL",@"NA",@"PR",@"DL",@"CE"];
-        lesson_3D = @[@"in",@"some",@"go",@"to",@"with",@"me",@"then",@"his",@"when",@"have"];
-        lesson_3E = @[@"with",@"his",@"to",@"have",@"go",@"me",@"then",@"in",@"some",@"when"];
+        //lesson_3A = @[];
+        //lesson_3B = @[@"4",@"8",@"2",@"1",@"3",@"48",@"23",@"49",@"82",@"77"];
+        //lesson_3C = @[@"F",@"T",@"U",@"P",@"Y",@"BL",@"NA",@"PR",@"DL",@"CE"];
+        //lesson_3D = @[@"in",@"some",@"go",@"to",@"with",@"me",@"then",@"his",@"when",@"have"];
+        //lesson_3E = @[@"with",@"his",@"to",@"have",@"go",@"me",@"then",@"in",@"some",@"when"];
         
         // Lesson 4
-        lesson_4B = @[@"5",@"9",@"3",@"7",@"4",@"22",@"85",@"53",@"68",@"77"];
-        lesson_4C = @[@"C",@"D",@"F",@"N",@"P",@"QS",@"XZ",@"AD",@"KF",@"GV"];
-        lesson_4D = @[@"not",@"at",@"she",@"all",@"said",@"was",@"come",@"this",@"so",@"what"];
+        //lesson_4A = @[];
+        //lesson_4B = @[@"5",@"9",@"3",@"7",@"4",@"22",@"85",@"53",@"68",@"77"];
+        //lesson_4C = @[@"C",@"D",@"F",@"N",@"P",@"QS",@"XZ",@"AD",@"KF",@"GV"];
+        //lesson_4D = @[@"not",@"at",@"she",@"all",@"said",@"was",@"come",@"this",@"so",@"what"];
         lesson_4E = @[@"she",@"come",@"not",@"what",@"was",@"at",@"this",@"said",@"all",@"so"];
         
         // Lesson 5
