@@ -177,5 +177,4 @@
 @property (nonatomic,strong) NSArray *lesson_20C;
 @property (nonatomic,strong) NSArray *lesson_20D;
 @property (nonatomic,strong) NSArray *lesson_20E;
-
 @end
