@@ -107,6 +107,7 @@
     self = [super init];
     if (self) {
         
+        // Ricardo was here
         // Image Arrays:
         lesson_1 = @[@"symbol_1.png",@"symbol_2.png",@"symbol_3.png",@"symbol_4.png",@"symbol_5.png",@"symbol_6.png",@"symbol_7.png",@"symbol_8.png",@"symbol_9.png",@"symbol_10.png"];
         //lesson_1 = @[lesson_1A,lesson_1B,lesson_1C,lesson_1D,lesson_1E];
