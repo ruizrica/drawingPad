@@ -46,7 +46,7 @@
     modelObject = [[LessonModel alloc]init];
     controlImages = [modelObject getLessonWithID:1];
     userDrawnImages = [[NSMutableArray alloc]init];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mainBackdrop.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mainBackdrop.jpg"]];
     
     //set in counter to 0
     counter = 0;

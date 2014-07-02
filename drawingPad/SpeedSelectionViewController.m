@@ -32,7 +32,7 @@ static int const FLASHING_SPEED = 1;
 
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mainBackdrop.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mainBackdrop.jpg"]];
 }
 
 - (BOOL)prefersStatusBarHidden
