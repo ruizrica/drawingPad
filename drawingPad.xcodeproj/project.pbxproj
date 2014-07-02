@@ -11,6 +11,8 @@
 		5EF8AF88195669D000977F6B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF8AF87195669D000977F6B /* MessageUI.framework */; };
 		EB1F9966195F7B2100FE7847 /* mainBackdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1F9965195F7B2100FE7847 /* mainBackdrop.png */; };
 		EB4084B61954FF5B0070A5D7 /* LessonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4084B51954FF5B0070A5D7 /* LessonModel.m */; };
+		EB77976C19639CEA0028B435 /* StoryCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB77976B19639CEA0028B435 /* StoryCardView.m */; };
+		EB77976E19639D1C0028B435 /* chalk.png in Resources */ = {isa = PBXBuildFile; fileRef = EB77976D19639D1C0028B435 /* chalk.png */; };
 		EB7A21C91953D86D0089C13D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A21C81953D86D0089C13D /* Foundation.framework */; };
 		EB7A21CB1953D86D0089C13D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A21CA1953D86D0089C13D /* CoreGraphics.framework */; };
 		EB7A21CD1953D86D0089C13D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7A21CC1953D86D0089C13D /* UIKit.framework */; };
@@ -70,6 +72,9 @@
 		EB1F9965195F7B2100FE7847 /* mainBackdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainBackdrop.png; sourceTree = "<group>"; };
 		EB4084B41954FF5B0070A5D7 /* LessonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonModel.h; sourceTree = "<group>"; };
 		EB4084B51954FF5B0070A5D7 /* LessonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonModel.m; sourceTree = "<group>"; };
+		EB77976A19639CEA0028B435 /* StoryCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCardView.h; sourceTree = "<group>"; };
+		EB77976B19639CEA0028B435 /* StoryCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCardView.m; sourceTree = "<group>"; };
+		EB77976D19639D1C0028B435 /* chalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chalk.png; sourceTree = "<group>"; };
 		EB7A21C51953D86D0089C13D /* drawingPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawingPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7A21C81953D86D0089C13D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB7A21CA1953D86D0089C13D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -155,6 +160,15 @@
 			name = LessonModel;
 			sourceTree = "<group>";
 		};
+		EB77976919639CAB0028B435 /* StoryCard */ = {
+			isa = PBXGroup;
+			children = (
+				EB77976A19639CEA0028B435 /* StoryCardView.h */,
+				EB77976B19639CEA0028B435 /* StoryCardView.m */,
+			);
+			name = StoryCard;
+			sourceTree = "<group>";
+		};
 		EB7A21BC1953D86D0089C13D = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +203,8 @@
 		EB7A21CE1953D86D0089C13D /* drawingPad */ = {
 			isa = PBXGroup;
 			children = (
+				EB77976D19639D1C0028B435 /* chalk.png */,
+				EB77976919639CAB0028B435 /* StoryCard */,
 				EB9A3D1C195F8D7F00EBA736 /* mainBackdrop.jpg */,
 				EB1F9965195F7B2100FE7847 /* mainBackdrop.png */,
 				EB7A21DA1953D86D0089C13D /* Main.storyboard */,
@@ -430,6 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB77976E19639D1C0028B435 /* chalk.png in Resources */,
 				EB99D0A71956290E00AEDAF6 /* symbol_10.png in Resources */,
 				EB99D0A91956290E00AEDAF6 /* symbol_3.png in Resources */,
 				EB99D0B7195670FE00AEDAF6 /* cvBackground.png in Resources */,
@@ -476,6 +493,7 @@
 			files = (
 				EBC4971D19540609009AC3D8 /* AdvancedDrawing.m in Sources */,
 				EBC497141953E6E3009AC3D8 /* DrawingSurface.m in Sources */,
+				EB77976C19639CEA0028B435 /* StoryCardView.m in Sources */,
 				EB7A21DF1953D86D0089C13D /* ViewController.m in Sources */,
 				EB4084B61954FF5B0070A5D7 /* LessonModel.m in Sources */,
 				EB7A21D91953D86D0089C13D /* AppDelegate.m in Sources */,
