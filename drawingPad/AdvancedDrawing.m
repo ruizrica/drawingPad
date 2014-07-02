@@ -27,9 +27,11 @@ static NSString * const penWidth = @"5";
         [self setMultipleTouchEnabled:NO];
         //[self setBackgroundColor:[UIColor whiteColor]];
         //[[UIColor whiteColor] setStroke];
-        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backdrop.jpg"]];
+        self.backgroundColor = [UIColor clearColor];
         path = [UIBezierPath bezierPath];
         [path setLineWidth:[penWidth floatValue]];
+        
+        //incrementalImage.image.ba
     }
     return self;
     
@@ -110,11 +112,10 @@ static NSString * const penWidth = @"5";
     }*/
     
     // Stable
-    UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+    /*UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
     [[UIColor colorWithPatternImage:[UIImage imageNamed:@"backdrop.jpg"]] setFill];
     [rectpath fill];
-    NSLog(@"rectPath");
-    
+    NSLog(@"rectPath");*/
     
     [incrementalImage drawAtPoint:CGPointZero];
     [[UIColor whiteColor] setStroke];

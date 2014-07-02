@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import AVFoundation;
 
 @interface StoryCardView : UIViewController
 

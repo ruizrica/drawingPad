@@ -52,7 +52,6 @@
 		EBC4970F1953E2F5009AC3D8 /* symbol_R.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC4970A1953E2F5009AC3D8 /* symbol_R.png */; };
 		EBC497141953E6E3009AC3D8 /* DrawingSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC497131953E6E3009AC3D8 /* DrawingSurface.m */; };
 		EBC4971D19540609009AC3D8 /* AdvancedDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4971C19540609009AC3D8 /* AdvancedDrawing.m */; };
-		EBF30FAE195D1935003F617C /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF30FAD195D1935003F617C /* home@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,7 +122,6 @@
 		EBC497131953E6E3009AC3D8 /* DrawingSurface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingSurface.m; sourceTree = "<group>"; };
 		EBC4971B19540609009AC3D8 /* AdvancedDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedDrawing.h; sourceTree = "<group>"; };
 		EBC4971C19540609009AC3D8 /* AdvancedDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedDrawing.m; sourceTree = "<group>"; };
-		EBF30FAD195D1935003F617C /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home@2x.png"; path = "../../../Desktop/home@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				EB77976D19639D1C0028B435 /* chalk.png */,
-				EB77976919639CAB0028B435 /* StoryCard */,
 				EB9A3D1C195F8D7F00EBA736 /* mainBackdrop.jpg */,
 				EB1F9965195F7B2100FE7847 /* mainBackdrop.png */,
 				EB7A21DA1953D86D0089C13D /* Main.storyboard */,
@@ -213,6 +210,7 @@
 				EB8217CF195A9594007CD0A7 /* Constants */,
 				EBC497051953E2E0009AC3D8 /* ControlImages */,
 				EB4084B31954FF360070A5D7 /* LessonModel */,
+				EB77976919639CAB0028B435 /* StoryCard */,
 				EBC497041953E2D4009AC3D8 /* ImageAssets */,
 				EB99D095195561F200AEDAF6 /* ReviewView */,
 				EB99D0991955622C00AEDAF6 /* LessonView */,
@@ -309,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				EB9A3D1A195F7FC900EBA736 /* backdrop.jpg */,
-				EBF30FAD195D1935003F617C /* home@2x.png */,
 				EB99D0B6195670FE00AEDAF6 /* cvBackground.png */,
 				EBC497021953E16D009AC3D8 /* userInputBackground.png */,
 				EB7A21FF1953D9A70089C13D /* drawBoundry_user.png */,
@@ -468,7 +465,6 @@
 				EB99D0AB1956290E00AEDAF6 /* symbol_5.png in Resources */,
 				EB99D0A81956290E00AEDAF6 /* symbol_2.png in Resources */,
 				EB99D0AE1956290E00AEDAF6 /* symbol_8.png in Resources */,
-				EBF30FAE195D1935003F617C /* home@2x.png in Resources */,
 				EBC497031953E16D009AC3D8 /* userInputBackground.png in Resources */,
 				EBC4970C1953E2F5009AC3D8 /* symbol_B.png in Resources */,
 				EB9A3D1D195F8D7F00EBA736 /* mainBackdrop.jpg in Resources */,

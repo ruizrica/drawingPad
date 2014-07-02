@@ -8,42 +8,82 @@
 
 #import "StoryCardView.h"
 
-@interface StoryCardView ()
-
+@interface StoryCardView ()<AVSpeechSynthesizerDelegate> {
+    NSString *storyText;
+    AVSpeechSynthesizer *synthesizer;
+    AVSpeechUtterance *spokenWords;
+}
+- (IBAction)pause:(id)sender;
+- (IBAction)start:(id)sender;
+- (IBAction)readToMe:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *tv_storyCardText;
 @end
 
 @implementation StoryCardView
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize tv_storyCardText;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mainBackdrop.png"]];
 }
 
-- (void)didReceiveMemoryWarning
+- (BOOL)prefersStatusBarHidden
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)start:(id)sender {
+    [synthesizer stopSpeakingAtBoundary:AVSpeechBoundaryWord];
+    [synthesizer speakUtterance:spokenWords];
 }
-*/
 
+- (IBAction)readToMe:(id)sender {
+    synthesizer = [[AVSpeechSynthesizer alloc]init];
+    synthesizer.delegate = self;
+    
+    spokenWords = [AVSpeechUtterance speechUtteranceWithString:storyText];
+    
+    [spokenWords setRate:0.2f];
+    [spokenWords setVolume:0.8f];
+    [synthesizer speakUtterance:spokenWords];
+}
+
+- (IBAction)pause:(id)sender {
+    [synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
+}
+
+- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer willSpeakRangeOfSpeechString:(NSRange)characterRange utterance:(AVSpeechUtterance *)utterance {
+    
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString:storyText];
+    [text addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:characterRange];
+    tv_storyCardText.attributedText = text;
+}
+
+- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
+    
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc]init];
+    [text removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0, [text length])];
+    tv_storyCardText.attributedText = text;
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
