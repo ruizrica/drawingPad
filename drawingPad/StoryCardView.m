@@ -50,8 +50,8 @@
     
     spokenWords = [AVSpeechUtterance speechUtteranceWithString:storyText];
     
-    [spokenWords setRate:0.2f];
-    [spokenWords setVolume:0.0f];
+    [spokenWords setRate:0.17f];
+    [spokenWords setVolume:0.8f];
     [synthesizer speakUtterance:spokenWords];
 }
 
