@@ -39,6 +39,8 @@
 @implementation ViewController
 @synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next, modelObject,speedLabel,speed;
 
+#define  LESSON_COEFFICIENT = 300
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

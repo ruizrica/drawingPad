@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E4363EB19761180006297DB /* backdrop@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E4363EA19761180006297DB /* backdrop@2x.jpg */; };
+		5E530EC0195F746600B42282 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E530EBF195F746600B42282 /* home@2x.png */; };
 		5EA38E661956174100E5E591 /* SpeedSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA38E651956174100E5E591 /* SpeedSelectionViewController.m */; };
 		5EF8AF88195669D000977F6B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF8AF87195669D000977F6B /* MessageUI.framework */; };
 		EB4084B61954FF5B0070A5D7 /* LessonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4084B51954FF5B0070A5D7 /* LessonModel.m */; };
@@ -47,8 +49,6 @@
 		EBC4970F1953E2F5009AC3D8 /* symbol_R.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC4970A1953E2F5009AC3D8 /* symbol_R.png */; };
 		EBC497141953E6E3009AC3D8 /* DrawingSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC497131953E6E3009AC3D8 /* DrawingSurface.m */; };
 		EBC4971D19540609009AC3D8 /* AdvancedDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4971C19540609009AC3D8 /* AdvancedDrawing.m */; };
-		EBF30FAE195D1935003F617C /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF30FAD195D1935003F617C /* home@2x.png */; };
-		EBF30FB0195D1E0D003F617C /* backdrop@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBF30FAF195D1E0D003F617C /* backdrop@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E4363EA19761180006297DB /* backdrop@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "backdrop@2x.jpg"; path = "../backdrop@2x.jpg"; sourceTree = "<group>"; };
+		5E530EBF195F746600B42282 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		5EA38E641956174100E5E591 /* SpeedSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedSelectionViewController.h; sourceTree = "<group>"; };
 		5EA38E651956174100E5E591 /* SpeedSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedSelectionViewController.m; sourceTree = "<group>"; };
 		5EF8AF87195669D000977F6B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -113,8 +115,6 @@
 		EBC497131953E6E3009AC3D8 /* DrawingSurface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingSurface.m; sourceTree = "<group>"; };
 		EBC4971B19540609009AC3D8 /* AdvancedDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedDrawing.h; sourceTree = "<group>"; };
 		EBC4971C19540609009AC3D8 /* AdvancedDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedDrawing.m; sourceTree = "<group>"; };
-		EBF30FAD195D1935003F617C /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home@2x.png"; path = "../../../Desktop/home@2x.png"; sourceTree = "<group>"; };
-		EBF30FAF195D1E0D003F617C /* backdrop@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backdrop@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,8 +286,8 @@
 		EBC497041953E2D4009AC3D8 /* ImageAssets */ = {
 			isa = PBXGroup;
 			children = (
-				EBF30FAF195D1E0D003F617C /* backdrop@2x.jpg */,
-				EBF30FAD195D1935003F617C /* home@2x.png */,
+				5E530EBF195F746600B42282 /* home@2x.png */,
+				5E4363EA19761180006297DB /* backdrop@2x.jpg */,
 				EB99D0B6195670FE00AEDAF6 /* cvBackground.png */,
 				EBC497021953E16D009AC3D8 /* userInputBackground.png */,
 				EB7A21FF1953D9A70089C13D /* drawBoundry_user.png */,
@@ -393,7 +393,7 @@
 				ORGANIZATIONNAME = "iOS Apps Development";
 				TargetAttributes = {
 					EB7A21C41953D86D0089C13D = {
-						DevelopmentTeam = 9R952YN3SA;
+						DevelopmentTeam = 947ZKHWGCF;
 					};
 					EB7A21E51953D86D0089C13D = {
 						TestTargetID = EB7A21C41953D86D0089C13D;
@@ -441,12 +441,12 @@
 				EB7A21DC1953D86D0089C13D /* Main.storyboard in Resources */,
 				EB7A21FE1953D8FF0089C13D /* drawBoundry.png in Resources */,
 				EB99D0AB1956290E00AEDAF6 /* symbol_5.png in Resources */,
-				EBF30FB0195D1E0D003F617C /* backdrop@2x.jpg in Resources */,
+				5E530EC0195F746600B42282 /* home@2x.png in Resources */,
 				EB99D0A81956290E00AEDAF6 /* symbol_2.png in Resources */,
 				EB99D0AE1956290E00AEDAF6 /* symbol_8.png in Resources */,
-				EBF30FAE195D1935003F617C /* home@2x.png in Resources */,
 				EBC497031953E16D009AC3D8 /* userInputBackground.png in Resources */,
 				EBC4970C1953E2F5009AC3D8 /* symbol_B.png in Resources */,
+				5E4363EB19761180006297DB /* backdrop@2x.jpg in Resources */,
 				EBC4970B1953E2F5009AC3D8 /* symbol_A.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

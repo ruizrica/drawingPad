@@ -110,15 +110,16 @@ static NSString * const penWidth = @"5";
     }*/
     
     // Stable
-    UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-    [[UIColor colorWithPatternImage:[UIImage imageNamed:@"backdrop.jpg"]] setFill];
-    [rectpath fill];
+   // UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+    //[[UIColor colorWithPatternImage:[UIImage imageNamed:@"backdrop.jpg"]] setFill];
+    //[rectpath fill];
     NSLog(@"rectPath");
     
     
     [incrementalImage drawAtPoint:CGPointZero];
     [[UIColor whiteColor] setStroke];
     [path stroke];
+    
     incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 }
