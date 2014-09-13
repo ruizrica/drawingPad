@@ -23,7 +23,7 @@
 
 //<-- temporary
 @property (strong, nonatomic) IBOutlet UIImageView *preview;
-@property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
+//@property (strong, nonatomic) IBOutlet UIImageView *controlImageBackground;
 @property (strong, nonatomic) IBOutlet UIImageView *controlImage;
 @property (strong, nonatomic) IBOutlet UIImageView *userInputBackground;
 @property (strong, nonatomic) IBOutlet UIView *drawingView;
@@ -37,7 +37,7 @@
 @end
 
 @implementation ViewController
-@synthesize controlImage, controlImageBackground, userInputBackground, drawingView, preview, start_next, modelObject,speedLabel,speed;
+@synthesize controlImage, userInputBackground, drawingView, preview, start_next, modelObject,speedLabel,speed;
 
 #define  LESSON_COEFFICIENT = 300
 
@@ -48,6 +48,7 @@
     modelObject = [[LessonModel alloc]init];
     controlImages = [modelObject getLessonWithID:1];
     userDrawnImages = [[NSMutableArray alloc]init];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mainBackdrop.jpg"]];
     
     //set in counter to 0
     counter = 0;
